@@ -1,0 +1,46 @@
+header {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $noir;
+    width: toRem(220);
+    padding: toRem(32);
+}
+
+
+
+
+    nav {
+
+        .menulien {
+            padding: toRem(10) 0 toRem(10) toRem(10);
+            margin: toRem(8) 0;
+            display: flex;
+            
+        }
+
+        .active {
+            background-color: $background;
+            border-radius: toRem(10) 0 0 toRem(10);
+            width: toRem(250);
+            
+        }
+
+        .iconify {
+            display: block;
+            margin: auto toRem(10) auto 0 ;
+        }
+
+
+        img {
+            width: 40%;
+            padding-bottom: toRem(30);
+        }
+
+        a {
+            color: $blanc;
+            font-size: toRem(18);
+        }
+    }
+

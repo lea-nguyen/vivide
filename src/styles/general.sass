@@ -1,0 +1,234 @@
+@import 'var'
+$height: toRem(200) - toRem(89)
+@debug "height: #{$height}"
+
+@font-face
+    src: url("#{$futura-font-path}/Futura-Bold.woff2") format("woff2")
+    font-family: $futura
+    font-weight: bold
+    font-size: toRem(30)
+
+@font-face
+    src: url("#{$futura-font-path}/Futura-Book.woff2") format("woff2")
+    font-family: $futura
+    font-weight: bold
+    font-size: normal
+
+.body_container
+    display: grid
+    grid-template-columns: toRem(250) 1fr 1fr 1fr
+    grid-template-rows: toRem(80) calc(100% - 100px)
+    grid-template-areas: "menu head head head""menu main main main"
+    font-family: $futura
+
+::-webkit-scrollbar
+    width: toRem(10)
+    height: toRem(10)
+
+::-webkit-scrollbar-track
+    box-shadow: inset 0 0 toRem(5) $details-grey-light
+    border-radius: toRem(10)
+
+::-webkit-scrollbar-thumb
+    background: $details-grey-dark
+    border-radius: toRem(10)
+
+::-webkit-scrollbar-thumb:hover
+    background: white
+
+.menu
+    grid-area: menu
+
+.header
+    grid-area: head
+
+.main
+    grid-area: main
+    margin: toRem(32)
+
+.home_right_menu
+    display: none
+
+body
+    margin: 0
+    color: $text-1
+    background-color: $main
+
+h1,.h1
+    font-family: $lato
+    font-size: toRem(32)
+
+h2
+    font-size: toRem(20)
+    font-family: $lato
+    font-weight: bold
+
+a,.a
+    color: $text-1
+    text-decoration: none
+    display: block
+    font-size: toRem(16)
+    font-weight: 400
+
+li
+    list-style: none
+    font-size: toRem(16)
+
+p
+    margin-bottom: unset
+    font-size: toRem(16)
+
+.select_filter
+    background-color: $details-grey-dark
+    color: $text-1
+    width: toRem(150)
+
+.buttons_filter
+    background-color: $details-grey-dark
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-evenly
+    padding: toRem(5)
+    max-width: toRem(365)
+    border-radius: toRem(5)
+
+.button_filter
+    border: 0
+    background-color: $details-grey-dark
+    color: $text-1
+    font-family: $futura
+    font-size: toRem(14)
+    margin: toRem(5)
+    padding: toRem(5) toRem(10)
+    cursor: pointer
+
+.button_filter:focus,.is_filter
+    background-color: $details-violet
+    color: $details-grey-dark
+    border-radius: toRem(5)
+.home
+    width: 100%
+    &>h1
+        margin-top: 3vh
+        font-family: $lato
+        font-size: toRem(32)
+
+.social_link
+    display: flex
+    width: 80%
+    margin-top: toRem(20)
+    align-items: center
+    a
+        width: toRem(50)
+        height: toRem(50)
+        border-radius: toRem(50)
+        background-color: $details-grey-dark
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        margin-right: toRem(15)
+    div
+        display: inline
+
+.social_discord
+    margin-top: toRem(200)
+    a
+        background-color: red
+        height: toRem(50)
+        width: toRem(50)
+        background-color: $main
+        border-radius: toRem(50) !important
+        margin-right: toRem(20) !important
+
+    div
+        display: inline
+        margin: toRem(0) toRem(20)
+
+.menu_open
+    .social_discord
+        margin-top: $height
+
+.social_medias
+    h1
+        margin-bottom: toRem(5)
+    p
+        margin: 0
+
+.back_button
+    font-size: toRem(18)
+    width: fit-content
+    background-color: $details-grey-dark
+    padding: toRem(10) toRem(15)
+    border-radius: toRem(8)
+    .icone_menu
+        position: relative
+        top: toRem(3)
+
+.btn
+    padding: toRem(6) toRem(8)
+    margin: 0 0 0 auto
+    width: fit-content
+    border-radius: toRem(5)
+    background-color: $details-grey-dark
+    font-size: toRem(18)
+    cursor: pointer
+    transition: background-color 200ms linear
+    &:hover
+        background-color: $details-grey-light-hover
+
+.se_connecter,.inscrire
+    font-size: 1.05rem
+    padding: 1vh 2vw
+    border-radius: toRem(5)
+    width: fit-content
+    display: inline-block
+.se_connecter
+    background-color: $details-violet
+    margin: 0 0 3px 0
+.inscrire
+    border: 1px #fff solid
+    margin: 3px 0 0 0
+
+
+@media screen and (min-width: 901px)
+    .main
+        margin: toRem(32) toRem(50)
+        display: flex
+        justify-content: space-between
+    .body_container
+        grid-template-columns: toRem(290) 1fr 1fr 1fr
+
+@media screen and (min-width: 1400px)
+    .home_right_menu
+        display: inline-block
+        min-width: toRem(260)
+        max-width: toRem(310)
+        width: 45%
+        height: calc( 100% - 80px )
+        position: fixed
+        right: toRem(50)
+        h1
+            margin-top: 0
+
+// MODE TABLETTE
+@media screen and ( max-width: 701px )
+    .body_container
+        display: initial
+        font-family: $futura
+@media screen and ( min-width: 849px )
+    .se_connecter
+        margin: 0 0 0 3px
+    .inscrire
+        margin: 0 3px 0 0
+@media screen and ( max-width: 758px )
+    .inscrire
+        display: none
+
+@media screen and (max-width:439px)
+    .buttons_filter
+        flex-wrap: nowrap
+        justify-content: flex-start
+        overflow-y: scroll
+
+    .buttons_filter::-webkit-scrollbar
+        display: none

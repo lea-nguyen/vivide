@@ -1,0 +1,29 @@
+$background : #464646;
+$noir : #272727;
+$blanc : #ffffff;
+$violet : #AF77FF;
+$gris : #A2A2A2;
+$futura: 'Futura';
+$lato: 'Lato';
+
+
+
+// Function px to rem
+@function toRem($value) {
+    $remValue: ($value / 16) + rem; 
+    @return $remValue;
+}
+
+//Mixin pour flex
+@mixin center-flex($type: null){
+    display: flex;
+  
+    @if $type == 'x' {
+      justify-content: center;
+    } @else if $type == 'y' {
+      align-items: center;
+    } @else {
+      align-items: center;
+      justify-content: center;
+    }
+  }

@@ -1,0 +1,392 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, a, img, footer, header,
+menu, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ----------------------------- *
+ *             FONTS             *
+ * ----------------------------- */
+@font-face {
+  font-family: 'Poppins';
+  src: url("fonts/poppins-regular.woff2") format("woff2"), url("fonts/poppins-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url("fonts/poppins-bold.woff2") format("woff2"), url("fonts/poppins-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  background-color: #464646;
+  color: #ffffff;
+  font-family: "Futura";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 2rem;
+  font-family: "Lato";
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-family: "Lato";
+  font-weight: bold;
+  margin-bottom: 1.25rem;
+  color: #AF77FF;
+}
+
+h3 {
+  font-size: 1.25rem;
+  color: #AF77FF;
+  font-weight: bold;
+}
+
+p {
+  line-height: 140%;
+  margin: 0.9375rem 0;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+.container {
+  width: 100%;
+  margin: 6.25rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.identifiant,
+.mdp {
+  position: relative;
+}
+
+.identifiant label,
+.mdp label {
+  background-color: #464646;
+  padding: 0 0.625rem;
+}
+
+.identifiant input,
+.mdp input {
+  all: unset;
+  background-color: #464646;
+  border: 1px solid #ffffff;
+  border-radius: 0.3125rem;
+  height: 1.25rem;
+  padding: 0.625rem 0.625rem;
+  margin: 0.3125rem 0 1.25rem 0;
+  font-size: 1rem;
+}
+
+form {
+  font-size: 1.125rem;
+}
+
+.btn input {
+  display: block !important;
+  margin: auto !important;
+  background-color: #AF77FF;
+  font-family: "Futura";
+  border: none;
+  padding: 0.625rem 2.5rem !important;
+  border-radius: 6px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 1.125rem;
+}
+
+.btn input:hover {
+  background-color: #D9BEFF;
+}
+
+.message {
+  background-color: #272727;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  padding: 0.625rem 1.25rem;
+}
+
+header {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #272727;
+  width: 13.75rem;
+  padding: 2rem;
+}
+
+nav .menulien {
+  padding: 0.625rem 0 0.625rem 0.625rem;
+  margin: 0.5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav .active {
+  background-color: #464646;
+  border-radius: 0.625rem 0 0 0.625rem;
+  width: 250px;
+}
+
+nav .iconify {
+  display: block;
+  margin: auto 0.625rem auto 0;
+}
+
+nav img {
+  width: 40%;
+  padding-bottom: 1.875rem;
+}
+
+nav a {
+  color: #ffffff;
+  font-size: 1.125rem;
+}
+
+main {
+  margin: 0 0 0 18.75rem;
+  padding: 1.875rem;
+}
+
+main h1 {
+  padding-bottom: 1.875rem;
+}
+
+.haut {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-bottom: 1.875rem;
+}
+
+.haut .btn2 {
+  background-color: #272727;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.3125rem;
+}
+
+.haut .btn2:nth-child(2) {
+  margin-left: 0.625rem;
+}
+
+.haut .btn2:nth-child(2) span {
+  display: block;
+  margin: auto;
+  padding-right: 0.3125rem;
+}
+
+.haut .btn2 a {
+  color: #ffffff;
+}
+
+.retour {
+  background-color: #272727;
+  border-radius: 0.3125rem;
+  padding: 0.625rem;
+}
+
+.btn3 {
+  color: #AF77FF;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 1.125rem;
+}
+
+table tr {
+  text-align: left;
+}
+
+table tr:nth-child(1) {
+  border-bottom: 0.0625rem #ffffff solid;
+}
+
+table th {
+  padding: 1.25rem;
+}
+
+table td {
+  padding: 1.25rem 1.25rem;
+  font-size: 1rem;
+  line-height: 120%;
+}
+
+table [type="submit"] {
+  display: inline-block;
+  border: 1px solid #000;
+  color: #000;
+  padding: 5px 10px;
+  margin: 2px 0;
+  text-decoration: none;
+}
+
+[type="submit"]:not(table [type="submit"]) {
+  display: inline-block;
+  border: 1px solid #000;
+  color: #000;
+  padding: 5px 10px;
+  margin: 15px 0;
+}
+
+form .input_label {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 1.875rem 0rem;
+}
+
+form .input_label label {
+  position: absolute;
+  left: 1.25rem;
+  top: -0.625rem;
+  background-color: #464646;
+  padding: 0 0.625rem;
+}
+
+form .input_label input, form .input_label select {
+  height: 1.875rem;
+}
+
+form .input_label input, form .input_label select, form .input_label textarea {
+  padding: 0.625rem 1.25rem;
+  background-color: #464646;
+  border: 1px solid #ffffff;
+  border-radius: 0.3125rem;
+  font-size: 1.125rem;
+  color: #A2A2A2;
+  font-family: "Futura";
+}
+
+form .input_label select {
+  height: 3.125rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.625rem;
+}
+
+form .input_label textarea {
+  height: 100%;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 1.875rem;
+  height: 100%;
+}
+
+form .form-haut {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+form .form-haut .form-gauche {
+  width: 40%;
+  padding-right: 1.875rem;
+}
+
+form .form-haut .form-droite {
+  width: 60%;
+}
+
+form .form-bas {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+form .form-bas input[type="submit"] {
+  background-color: #272727;
+  padding: 0.625rem;
+  color: #ffffff;
+  font-size: 1.125rem;
+  border-radius: 0.375rem;
+}
+/*# sourceMappingURL=style.css.map */

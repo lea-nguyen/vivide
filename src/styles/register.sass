@@ -1,0 +1,140 @@
+@import 'var'
+
+body
+    margin: 0
+    background-color: $main
+    color: $text-1
+    font-family: $futura
+
+.body_register
+    display: flex
+
+.register
+    vertical-align: middle
+    display: flex
+    flex-direction: column
+    justify-content: center
+    margin: auto
+    padding: toRem(50) toRem(50)
+
+    h1
+        font-size: toRem(42)
+        margin: 0 0 toRem(10) 0
+    >p
+        font-size: toRem(20)
+    p
+        margin: 0 0 toRem(10) 0
+
+    button
+        background-color: $details-grey-dark
+        border: 0
+        padding: toRem(10) toRem(8)
+        width: fit-content
+        margin: auto auto toRem(20) auto
+        border-radius: toRem(5)
+
+form
+    display: inline-block
+    width: 100%
+
+    .label
+        position: absolute
+        background-color: $main
+        left: toRem(20)
+        top: toRem(-10)
+        padding: 0 toRem(10)
+        z-index: 1
+
+    .input_label
+        position: relative
+
+    ul
+        padding: 0
+        list-style-type: none
+        li
+            font-size: toRem(14)
+
+input.reg_input
+    display: block
+    // width: toRem(300)
+    width: 100%
+    background-color: $main
+    color: $text-2 !important
+    border: 0
+    padding: toRem(12) toRem(20)
+    border: toRem(1) solid $text-1
+    border-radius: toRem(5)
+    margin: toRem(20) 0
+
+    &:-webkit-autofill
+        -webkit-box-shadow: inset 0 0 0px 9999px $main
+
+    &::first-line
+        color: $text-2 !important
+        font-size: toRem(14)
+
+[type="checkbox"]
+    display: inline
+    width: auto
+    margin-top: toRem(10)
+
+button.register
+    display: block
+    width: fit-content
+    margin: auto
+    padding: toRem(10) toRem(50)
+    color: $details-grey-dark
+    font-family: $futura
+    font-size: toRem(16)
+    background-color: $details-violet
+    border: 0
+    border-radius: toRem(7)
+    margin: toRem(20) auto
+    cursor: pointer
+
+a
+    display: block
+
+a span
+    color: $details-violet
+
+.img_register
+    display: none
+
+.forgot
+    color: $details-violet
+    text-align: right
+
+.remember_input_label
+    display: flex
+    justify-content: flex-end
+    padding-bottom: toRem(20)
+
+    input
+        padding: 0
+        margin: auto toRem(10) auto 0
+        display: block
+        width: fit-content
+.hide_pswd
+    position: relative
+.eye
+    position: absolute
+    right: 1rem
+    top: 0.8rem
+
+@media screen and (min-width: 700px)
+    .input.reg_input
+        width: 100%
+    .img_register
+
+        // display: inline-block
+        width: 49%
+        height: 100vh
+        background-color: $text-1
+        vertical-align: middle
+        display: flex
+        justify-content: center
+        align-items: center
+        img
+            width: 70%
+            height: auto

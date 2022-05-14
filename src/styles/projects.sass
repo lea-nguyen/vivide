@@ -1,0 +1,299 @@
+@import 'var'
+
+.watch
+    width: 100%
+.trend
+    width: 100%
+.project
+    height: toRem(150)
+    display: flex
+    margin: toRem(25) 0
+    width: 100%
+    max-width: 550px
+    min-width: 300px
+
+    div
+        display: flex
+        // width: 100%
+        flex-wrap: nowrap
+
+        .contains_img
+            width: toRem(180)
+            flex-shrink: 0
+            height: toRem(140)
+            background-color: $text-1
+            border-radius: toRem(10)
+            margin-right: toRem(15)
+            vertical-align: middle
+            display: inline-block
+            object-fit: cover
+            object-position: 50% 50%
+    .description
+        display: inline-block
+        height: 100%
+        vertical-align: middle
+        h2
+            margin: toRem(5) 0 0 0
+            font-size: toRem(20)
+            @include line-clamp(2, 1.25em)
+        p
+            margin: toRem(5) 0 toRem(5) 0
+            width: 100%
+            font-family: $futura
+            @include line-clamp(2, 1.25em)
+        .pp_description
+            @include line-clamp(2, 1.25em)
+
+.icone_stat
+    position: relative
+    top: toRem(2)
+.time
+    margin-left: toRem(8)
+
+.history
+    width: 100%
+    h2
+        font-size: toRem(24)
+    .voir_plus
+        background-color: $details-grey-dark
+        display: flex
+        margin: auto 0 auto auto
+        width: fit-content
+        font-size: toRem(14)
+        padding: toRem(10)
+        border-radius: toRem(10)
+
+.bland_project
+    height: toRem(150)
+    margin: toRem(25) 0
+    width: 100%
+    background-color: $details-grey-dark
+    border-radius: toRem(10)
+    padding: 20px
+
+.description-not_log
+    margin: 0
+    white-space: break-spaces
+
+
+.projects
+    width: 100%
+    max-width: 550px
+    min-width: 300px
+
+
+.on_going_projects
+    overflow: auto
+    white-space: nowrap
+    width: 100%
+    height: toRem(190)
+    padding-bottom: 2vh
+    background-color: $main
+
+.on_going_project
+    height: 100%
+    width: toRem(210)
+    background-color: $details-grey-dark
+    margin-right: 1.25rem
+    border-radius: toRem(10)
+    padding: 1.25rem
+    display: inline-flex
+    position: relative
+    div
+        width: 100%
+    h2
+        font-size: toRem(16)
+        font: inherit
+        max-width: 80%
+        white-space: break-spaces
+        position: absolute
+        bottom: toRem(20)
+
+    .description_preview_project
+        display: none
+
+.project_description
+    padding: toRem(20)
+    border-radius: toRem(10)
+    // position: fixed
+
+    .contains_img
+        width: 100%
+        height: toRem(180)
+        background-color: $text-1
+        object-fit: cover
+        object-position: 50% 50%
+
+    .save
+        padding: 0
+
+        .icone_save
+            position: relative
+            top: toRem(5)
+            margin-right: toRem(8)
+
+.streaming_video>div:first-of-type
+    width: 100% !important
+    height: calc( calc( 100vw - 40px ) * 0.35 ) !important
+
+.auteur
+    font-family: $lato
+
+.like
+    display: flex
+    p:nth-child(2)
+        position: relative
+        bottom: toRem(5)
+        font-size: toRem(16)
+        left: toRem(5)
+
+.ressources
+    margin-top: toRem(15)
+    border: toRem(1) solid $text-1
+    border-radius: toRem(10)
+    padding: toRem(20)
+    h2
+        margin: 0
+        font-size: toRem(18)
+
+.inside_project
+    .contains_img
+        height: auto
+        object-fit: cover
+        object-position: 50% 50%
+.playlist
+    padding: toRem(30)
+
+.vimeo_video
+    margin-top: toRem(25)
+
+@media screen and (min-width: 901px)
+    .inside_project
+        display: flex
+        width: 100%
+        overflow-y: hidden
+        // justify-content: space-between
+        .project_description
+            width: 40%
+            padding: 0
+            margin-top: 25px
+            padding-right: toRem(30)
+            // position: fixed
+            // width: toRem(350)
+            .contains_img
+                border-radius: toRem(10)
+                height: auto
+                object-fit: cover
+                object-position: 50% 50%
+            .description
+                h2
+                    font-size: toRem(24)
+                    margin: toRem(18) 0 toRem(10) 0
+                .p_auteur
+                    margin: toRem(10) 0 toRem(10) 0
+                .p_description
+                    margin: toRem(10) 0 toRem(10) 0
+                .p_stat
+                    margin: toRem(10) 0 toRem(15) 0
+
+        .playlist
+            width: 50%
+            // width: calc( 100% - 400px )
+            // position: relative
+            // left: toRem(300)
+            padding: 0
+            .project
+                width: fit-content
+
+                .container_img
+                    width: toRem(180)!important
+                    height: toRem(140)
+                    img
+                        min-width: 100%
+                        height: auto
+            .description
+                margin-left: toRem(20)
+                display: flex
+                flex-direction: column
+
+                h2
+                    margin: 0
+                    white-space: nowrap
+                p
+                    margin-top: toRem(10)
+                    @include line-clamp(2, 1.25em)
+
+@media screen and (min-width: 1001px)
+    .watch
+        display: flex
+        justify-content: space-between
+    .watch>section:first-child
+        display: inline-block
+        width: 60%
+    .watch .playlist
+        display: inline-block
+        width: 36%
+
+// @media screen and (max-width: 510px)
+//     .pp_description
+//         display: none !important
+
+@media screen and (max-width: 1400px)
+    .project
+        width: 100%
+
+// MODE DESKTOP PETIT
+@media screen and ( max-width: 1200px )
+    .project,.project_trend
+        .description
+            .pp_description
+
+// MODE TABLETTE GRAND
+@media screen and ( max-width: 800px )
+    .project,.project_trend
+        .description
+            h2
+                font-size: toRem(18)
+            .pp_description
+                -webkit-line-clamp: 1
+
+// MODE TABLETTE SANS MENU GAUCHE
+@media screen and ( max-width: 701px )
+    .project,.project_trend
+        .description
+            .pp_description
+                -webkit-line-clamp: 2
+
+// MODE TELEPHONE GRAND
+@media screen and ( max-width: 501px )
+    .project,.project_trend
+        .description
+            .pp_description
+                display: none
+
+    .project
+        div
+            .contains_img
+                width: toRem(160)
+
+// MODE TELEPHONE PETIT
+@media screen and ( max-width: 360px )
+    .main
+        margin: toRem(28)
+    .project,.project_trend
+        flex-direction: column
+        flex-direction: row
+        .description
+            h2
+                font-size: toRem(18)
+                margin: toRem(15) 0 toRem(10) 0
+            .pp_description
+                display: none
+    .project
+        height: fit-content
+        margin: toRem(40) 0
+        div
+            flex-direction: column
+            .contains_img
+                width: 100%
+                height: fit-content

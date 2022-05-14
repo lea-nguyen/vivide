@@ -1,0 +1,838 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* --------------------------------------------------------*/
+/* -----------------  VARIABLES COULEURS ------------------*/
+/* --------------------------------------------------------*/
+
+:root {
+    --black: #272727;
+    --white: #ffffff;
+    --violetclair: #AF77FF;
+    --background: #464646;
+    --grisclair: #A3A3A3;
+    --gristresclair : #EDEDED;
+}
+
+/* --------------------------------------------------------*/
+/* -------------------  IMPORT FONTS ------------------------*/
+/* --------------------------------------------------------*/
+
+@font-face {
+ font-family: "Futura";
+ src: url("fonts/Futura-reg.woff") format("woff");
+}
+	
+@font-face {
+ font-family: "Futura bold";
+ src: url("fonts/Futura-bold.woff") format("woff");
+}
+	
+/* --------------------------------------------------------*/
+/* -------------------  SCROLL BAR ------------------------*/
+/* --------------------------------------------------------*/
+
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #272727 #ffffff;
+}
+
+*::-webkit-scrollbar {
+    width: auto;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #272727;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+}
+
+
+/* --------------------------------------------------------*/
+/* -------------  Eléments principaux ---------------------*/
+/* --------------------------------------------------------*/
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body, html {
+    overflow-x: hidden;
+  }
+
+
+body {
+    margin: 0;
+    font-family: 'Futura';
+    color: var(--white);
+    font-size: 1.5rem;
+	font-weight: 400;
+    background-color: var(--background);
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 4rem;
+    font-family: 'Lato';
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+    font-size: 3rem;
+    font-family: 'Lato';
+	font-weight: 600;
+}
+
+h3 {
+    font-family: 'Lato';
+    font-size: 2rem;
+	font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+
+/* Section 1  */
+.section1 {
+    background-color: var(--black);
+    /* width: 100vw; */
+    min-height: 100vh;
+}
+
+/* Barre de navigation */
+nav {
+    display: flex;
+    padding: 5vh 5vw;
+    height: 15%;
+    width: 100%;
+}
+
+/* Nav bar gauche logo */
+.logo {
+    width: 20%;
+    height: 100%;
+    align-items: center;
+}
+
+.logo img:nth-child(2) {
+    display: none;
+}
+
+/* Nav bar droite connexion */
+.connexion {
+    display: flex;
+    width: 80%;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+/* boutons */
+.btn {
+    padding: 1vh 1vw;
+    border-radius: 5px;
+    height: fit-content;
+    width: fit-content;
+    align-items: center;
+    font-size: 1.25rem;
+    color: var(--white);
+    cursor: pointer;
+    transition: background-color 200ms linear;
+}
+
+.btn2 {
+    padding: 1vh 1vw;
+    border-radius: 5px;
+    height: fit-content;
+    width: fit-content;
+    align-items: center;
+    font-size: 1.25rem;
+    color: var(--white);
+    cursor: pointer;
+    transition: background-color 200ms linear;
+}
+
+.btn:hover {
+    background-color: #D9BEFF;
+    transition: background-color 200ms linear; 
+}
+
+.se_connecter {
+    transition: color  200ms linear;
+}
+
+.se_connecter:hover {
+    color: var(--violetclair);
+    transition: color  200ms linear;
+    background-color: transparent;
+}
+
+
+.inscrire,
+.site,
+.serveur {
+    background-color: var(--violetclair);
+    /* a enlever plus tard  */
+    color: var(--black);
+}
+
+.inscrire {
+    margin-left: 3vw;
+}
+
+.inscrire a,
+.site a,
+.serveur a {
+    color: var(--black);
+}
+
+/* container section 1  */
+.container {
+    min-height: 85vh;
+    display: flex;
+}
+
+/* gauche  */
+.landing_gauche {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2vw 0 6vw;
+}
+
+/* droite */
+.landing_droite {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.landing_droite img {
+    width: 80%;
+    padding: 0 5vw 0 1vw;
+}
+
+
+
+/* -------------------------------------------------------*/
+/* -------------------  SECTION 2 ------------------------*/
+/* -------------------------------------------------------*/
+
+.section2 {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.section2 p,
+.section3 p,
+.section4 p,
+.section5 p {
+    font-size: 1.25rem;
+    line-height: 140%;
+    margin-bottom: 0;
+}
+
+
+.container2 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding: 10vh 0 12vh 0;
+}
+
+/* Section 2 coté gauche  */
+.informations {
+    width: 45%;
+    padding: 0 4vw 0 6vw;
+}
+
+/* Section 2 coté droit  */
+.domaines {
+    height: 100%;
+    padding: 0 6vw 0 4vw;
+    width: 55%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    gap: 2% 8%;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "design developpement"
+        "audiovisuel communication";
+}
+
+.design {
+    grid-area: design;
+}
+
+.developpement {
+    grid-area: developpement;
+}
+
+.audiovisuel {
+    grid-area: audiovisuel;
+}
+
+.communication {
+    grid-area: communication;
+}
+
+.domaines img {
+    position: relative;
+    left: -10px;
+}
+
+.domaines h3 {
+    margin: 0vh 0 -1vh 0;
+}
+
+
+
+/* -------------------------------------------------------*/
+/* -------------------  SECTION 3-4-5 ------------------------*/
+/* -------------------------------------------------------*/
+
+.section3 .container_categorie,
+.section4 .container_categorie,
+.section5 .container_categorie {
+    display: flex;
+    padding: 10vh 5vw;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.section3 .container_categorie {
+    padding-top: 0vh;
+}
+
+
+.section5 .container_categorie {
+    padding-bottom: 20vh;
+}
+
+
+/* .section3 .container_categorie,
+.section4 .container_categorie,
+.section5 .container_categorie {
+    padding-top: 0vh;
+} */
+
+.section3 h2,
+.section4 h2,
+.section5 h2 {
+    font-family: 'Futura bold';
+	font-weight: 900;
+}
+
+
+/* Coté texte */
+.inscription {
+    width: 60%;
+}
+
+.inscription1,
+.inscription3 {
+    padding-right: 5vw;
+}
+
+.inscription2 {
+    padding-left: 5vw;
+}
+
+/* Coté image  */
+.img_inscription {
+    width: 40%;
+    display: flex;
+    justify-content:center;
+}
+
+.img_inscription img {
+    width: 70%;
+}
+
+/* bouton s'inscrire */
+.inscription .inscrire {
+    margin-left: 0;
+}
+
+/* Texte - chiffre */
+.inscription .chiffre {
+    position: relative;
+}
+
+/* Chiffre */
+.chiffre h4 {
+    font-size: 6rem;
+    margin: 0;
+    color: var(--grisclair);
+    z-index: -10;
+    font-family: "Futura Bold";
+}
+
+.chiffre h2 {
+    position: absolute;
+    top: 35px;
+    left: 20px;
+}
+
+
+/* -------------------------------------------------------*/
+/* -------------------  SECTION 6 ------------------------*/
+/* -------------------------------------------------------*/
+
+.section6 {
+    min-height: 40vh;
+    /* width: 102vw; */
+    display: flex;
+}
+
+.bande {
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    padding: 10vh 6vw 12vh 6vw;
+    /* position: relative; */
+    /* left: -10px; */
+    transform: rotate(-1.56deg);
+}
+
+.bande_text {
+    width: 100%;
+    height: 100%;
+    transform: rotate(1.56deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bande_gauche {
+    width: 60%;
+    padding-right: 10vw;
+}
+
+
+.bande img {
+    display: block;
+    margin: auto;
+}
+
+
+/* -------------------------------------------------------*/
+/* -------------------  SECTION 7 ------------------------*/
+/* -------------------------------------------------------*/
+
+.section7 {
+    min-height: 40vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15vh 0;
+
+}
+
+.section7 .container_inscription {
+    text-align: center;
+}
+
+/* -------------------------------------------------------*/
+/* -------------------  FOOTER ------------------------*/
+/* -------------------------------------------------------*/
+
+
+footer {
+    padding: 10vh 6vw;
+    min-height: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--black);
+}
+
+.reseaux {
+    height: fit-content;
+}
+
+.reseaux img {
+    padding-right: 2vw;
+    height: 50px;
+}
+
+.rejoindre {
+    background-color: var(--violetclair);
+    color: var(--black);
+}
+
+footer p {
+    margin-top: 0;
+    /* font-size: 1.2rem; */
+}
+
+footer h3 {
+    margin-bottom: 2px;
+}
+/* 
+form {
+    display: flex;
+    /* flex-wrap: nowrap; }*/
+
+/* input[type="text"]{
+    margin-right: 1vw;
+} */
+
+input::placeholder {
+    font-family: 'Futura';
+    font-size: 1.25rem;
+    color: var(--black);
+}
+
+input {
+    border: none;
+}
+
+.newsletter {
+    width: 50%;
+}
+
+
+
+/* <-------------------- POPUP ------------------------> */
+.popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--black);
+    background-color: var(--white);
+    max-width: 85vw;
+    width: fit-content;
+    border-radius: 20px;
+    z-index: 3;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10vh 8vw;
+    display: none;
+}
+
+.popup h3 {
+    font-family: 'Futura';
+}
+
+.popup p {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.popup .petitlogo {
+    width: 25%;
+}
+
+
+
+input[type="email"]{
+    background-color: var(--gristresclair);
+    margin-bottom: 2vh;
+    max-width: 70vw;
+}
+
+ input[type="email"]::placeholder {
+    color: #777777;
+}
+
+input[type="email"]:hover {
+    background-color: var(--gristresclair);
+    }
+
+/* BOUTON POUR QUITTER LA POPUP */
+.popup .exit {
+    color: var(--background);
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    position: relative;
+    bottom: 20px;
+}
+
+.popup form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+    /* FOOTER  */
+    /* form {
+        flex-wrap: wrap; 
+        justify-content: center;
+    } */
+
+input[type="email"]{
+        margin-bottom: 2vh;
+        color: #272727;
+        margin-right: 1vw;
+    }
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES  */
+
+/* ORDI */
+
+@media screen and (max-width: 1250px) {
+
+    /* SECTION 1  */
+    .landing_gauche {
+        padding: 0 2vw 0 6vw;
+    }
+
+    .landing_droite img {
+        width: 90%;
+    }
+
+}
+/* TABLETTE */
+@media only screen and (max-width: 900px) {
+
+    /* TOUT  */
+    /* Typo */
+    body {
+        font-size: 1.25rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+
+    .chiffre h4 {
+        font-size: 5rem;
+    }
+
+    .chiffre h2 {
+        position: absolute;
+        top: 32px;
+        left: 20px;
+        font-size: 2.3rem;
+    }
+
+    .section2 p,
+    .section3 p,
+    .section4 p,
+    .section5 p {
+        font-size: 1.125rem;
+    }
+
+    /* SECTION 1  */
+    .section1 {
+        min-height: fit-content;
+    }
+
+    .landing_droite img {
+        width: 90%;
+    }
+
+    .container {
+        padding: 5vh 0 10vh 0;
+        min-height: fit-content;
+    }
+
+    /* SECTION 2  */
+    .container2 {
+        flex-direction: column;
+    }
+
+    .informations {
+        width: 100%;
+        padding: 0vh 6vw 10vh 6vw;
+    }
+
+    .domaines {
+        width: 100%;
+        background-color: var(--black);
+        padding: 10vh 6vw 18vh 6vw;
+        /* grid-template-rows: 1fr 1fr 1fr 1.2fr; */
+        gap: 8% 8%;
+    }
+
+    /* SECTION 6 */
+    .bande_droite img {
+        display: none;
+    }
+
+    .bande_gauche {
+        width: 60%;
+    }
+
+    /* FOOTER */
+    footer {
+        flex-direction: column;
+    }
+
+    .newsletter, .reseaux {
+        width: 100%;
+    }
+
+    .reseaux {
+        display: flex;
+        justify-content: center;
+        margin-top: 10vh;
+    }
+
+    .reseaux img {
+        height: 40px;
+    }
+
+    .newsletter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    input[type="email"]{
+        margin-right: 2vw;
+    }
+
+
+
+}
+
+
+/* ENTRE TABLETTE ET TELEPHONE */
+@media only screen and (max-width: 700px) {
+
+    /* SECTION 1  */
+    .landing_gauche {
+        width: 70%;
+        padding: 0 6vw 0 6vw;
+    }
+
+    .landing_droite {
+        display: none;
+    }
+
+
+    /* SECTION 3  */
+    .img_inscription {
+        display: none;
+    }
+
+    .inscription {
+        width: 90%;
+        padding: 0;
+    }
+
+    /* SECTION 6 */
+    .bande_text {
+        flex-direction: column;
+    }
+
+    .bande_gauche,
+    .bande_droite {
+        width: 100%;
+        padding: 0 6vw;
+        text-align: center;
+    }
+
+}
+
+
+/* TELEPHONE */
+@media only screen and (max-width: 500px) {
+
+    /* TOUT  */
+
+    /* Typo */
+    body {
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        font-size: 2.6rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .chiffre h2 {
+        font-size: 2rem;
+        top: 36px;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .section2 p {
+        font-size: 1.175rem;
+    }
+
+    /* SECTION 1  */
+    .landing_gauche {
+        width: 100%;
+    }
+
+    .logo img:nth-child(1) {
+        display: none;
+    }
+
+    .logo img:nth-child(2) {
+        display: block;
+    }
+
+
+    /* SECTION 2  */
+
+    .domaines {
+        display: grid;
+        gap: 4% 0%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1.6fr;
+        grid-template-areas:
+            "design"
+            "developpement"
+            "audiovisuel"
+            "communication";
+
+        width: 100%;
+        height: fit-content;
+        padding: 10vh 6vw 10vh 6vw;
+    }
+
+    .btn {
+        font-size: 1.05rem;
+        padding: 1vh 2vw;
+        
+    }
+
+
+
+}

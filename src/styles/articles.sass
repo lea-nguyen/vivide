@@ -1,0 +1,161 @@
+@import 'var'
+
+.article
+    height: toRem(125)
+    display: flex
+    margin: toRem(16) toRem(18) toRem(16) 0
+    width: 100%
+    background-color: $details-grey-dark
+    border-radius: toRem(10)
+    padding: toRem(15)
+
+    .img_article
+        width: toRem(100)
+        height: 100%
+        background-color: $text-1
+        border-radius: toRem(10)
+        margin-right: toRem(12)
+        vertical-align: middle
+        display: inline-block
+        object-fit: cover
+        object-position: 50% 50%
+
+    .description_article
+        display: inline-block
+        height: 100%
+        vertical-align: middle
+        overflow: hidden
+        text-overflow: ellipsis
+        display: -webkit-box
+        -webkit-line-clamp: 3
+        line-height: 125%
+        -webkit-box-orient: vertical
+
+    p
+        font-size: toRem(14)
+        -webkit-line-clamp: 1
+        margin: toRem(2) 0 0 0
+        line-height: toRem(22)
+
+    h2
+        overflow: hidden
+        text-overflow: ellipsis
+        -webkit-line-clamp: 1
+        margin: 0 0 toRem(8) 0
+        font-size: toRem(16)
+        white-space: nowrap
+article
+    .img_article
+        width: 100vw
+        height: calc( calc( 100vw - 40px ) * 0.6)
+        position: relative
+        left: toRem(-20)
+        background-color: $text-1
+        margin-right: toRem(15)
+        vertical-align: middle
+        border-radius: toRem(10)
+        object-fit: cover
+        object-position: 50% 50%
+
+.new_articles
+    .article
+        background-color: $details-grey-dark
+        padding: toRem(15)
+        border-radius: toRem(10)
+        margin: toRem(10) 0
+
+    > p
+        margin: 0 0 toRem(15) 0
+
+    h1
+        margin: 0 0 toRem(5) 0
+
+    .img_article
+        width: 35%
+        height: 100%
+        object-fit: cover
+        object-position: 50% 50%
+
+    .description_article
+        width: calc( 100% - 80px)
+        height: toRem(100)
+        -webkit-line-clamp: 4
+
+        p
+            line-height: toRem(18)
+
+    h2
+        white-space: nowrap
+
+.article_contain
+    margin-top: toRem(32)
+    .img_article
+        width: 100%
+        left: 0
+        height: toRem(200)
+        object-fit: cover
+        object-position: 50% 50%
+
+    h1
+        margin: toRem(20) 0 toRem(15) 0
+
+    p
+        margin: 0
+
+.article_body
+    .article_p
+        padding-bottom: toRem(20)
+        h3
+            margin: 0 0 toRem(5) 0
+            font-family: $lato
+            font-size: toRem(20)
+        img
+            padding: toRem(20) toRem(20) toRem(2) toRem(20)
+            display: block
+            margin: auto
+        figcaption
+            text-align: center
+            font-size: toRem(14)
+            font-family: $lato
+            font-style: italic
+            width: 50%
+            display: block
+            margin: auto
+
+@media screen and (min-width: 1001px)
+    .articles
+        display: flex
+        flex-wrap: wrap
+        width: 100%
+        justify-content: space-between
+        a
+            display: inline
+            width: 48%
+            .article
+                display: inline-flex
+                .description_article
+                    width: calc( 100% - 120px)
+    .article_contain
+        display: flex
+        justify-content: space-between
+        flex-direction: row-reverse
+        article
+            display: inline-block
+            width: toRem(250)
+            .img_article
+                height: toRem(150)
+                object-fit: cover
+                object-position: 50% 50%
+        .article_body
+            width: calc( 100% - 200px )
+            padding-right: toRem(30)
+        .back_button
+            position: fixed
+            top: toRem(70)
+            justify-self: self-start
+            left: toRem(340)
+    .article_main
+        width: 100%
+@media screen and (min-width: 1400px)
+    .menu_article
+        display: none !important

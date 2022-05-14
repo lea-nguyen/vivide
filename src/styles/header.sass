@@ -1,0 +1,95 @@
+@import 'var'
+
+.header
+  position: relative
+  height: toRem(80)
+
+.header_contain
+  width: calc( 100% - 290px)
+  padding: toRem(32) toRem(32) toRem(20) toRem(32)
+  margin: 0 0 toRem(30) 0
+  display: flex
+  justify-content: space-between
+  position: fixed
+  top: 0
+  background-color: $main
+  align-items: center
+  z-index: 10
+
+  .search_header
+    display: flex
+
+    .icone_search
+      background-color: $details-grey-dark
+      height: toRem(50)
+      width: toRem(40)
+      padding: 0 toRem(10)
+      border-radius: toRem(10) 0 0 toRem(10)
+
+    [type="text"]
+      height: toRem(37)
+      background-color: $details-grey-dark
+      border: 0
+      color: $text-1
+      width: calc( 100% - 2.3rem )
+      border-radius: 0 toRem(10) toRem(10) 0
+      font-size: toRem(16)
+      padding: toRem(25) toRem(25) toRem(25) toRem(10)
+
+.contain_profile
+  background-color: $details-grey-dark
+  border-radius: toRem(50)
+.profile
+  display: flex
+  align-items: center
+  padding: toRem(7) toRem(10)
+  p
+    width: toRem(37)
+    height: toRem(37)
+    border-radius: 50%
+    background-color: $details-violet
+    margin: 0
+    font-size: toRem(24)
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-right: toRem(10)
+
+.profil_info
+  position: absolute
+  right: toRem(32)
+  padding: toRem(10) toRem(20) toRem(20) toRem(20)
+  background-color: $details-grey-light
+  border-radius: toRem(10)
+  border: toRem(1) solid $text-1
+  .icone_menu
+    position: relative
+    top: toRem(7)
+
+.button
+  display: none
+
+@media screen and (min-width: 901px)
+  .header_contain
+    width: calc( 100% - 280px )
+    padding: toRem(35) toRem(50) toRem(20) toRem(50)
+    margin: 0 0 toRem(30) 0
+
+@media screen and ( max-width: 701px )
+  .line
+    width: 100%
+    height: 0
+    border: toRem(1) $details-grey-dark solid
+    display: inline-block
+    margin: 0
+  .button
+    width: toRem(35)
+    height: toRem(25)
+    display: inline-flex
+    flex-direction: column
+    justify-content: space-between
+    padding-top: 0
+    z-index: 1
+  .header_contain
+    width: 100%
+    left: 0

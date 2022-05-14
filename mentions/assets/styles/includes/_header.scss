@@ -1,0 +1,52 @@
+header {
+    width: 100%;
+    @include center-flex($type: y);
+    text-align: center;
+    background-color: $background;
+    top: 0;
+    flex-direction: column;
+
+    @media screen and (min-width: 800px) {
+    position: fixed; 
+    display: flex;
+    flex-direction: row;
+    // height: fit-content;
+    height: fit-content;
+    padding-top: toRem(45);
+    }
+
+
+
+    .logo {
+        display: flex;
+
+        @media screen and (min-width: 800px) {
+        display: block;
+        width: fit-content;
+        padding-bottom:0px;
+            }
+        
+        
+        width: 100%;
+        padding-bottom:20px;
+        img {
+            width: 20%;
+            @media screen and (min-width: 800px) {
+                width: 90%;
+            }
+        }
+    }
+
+    .titre {
+        margin-top:toRem(20);
+        @media screen and (min-width: 600px) {
+            width:80%;
+            display: block;
+            margin: 0 auto;
+        }
+        @media screen and (min-width: 800px) {
+            width:60%;
+        }
+    }
+}
+

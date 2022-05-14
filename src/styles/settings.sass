@@ -1,0 +1,147 @@
+@import 'var'
+
+.profile_picture
+	height: toRem(60)
+	width: toRem(60)
+	border-radius: toRem(50)
+	background-color: $details-violet
+	display: flex
+	align-items: center
+	justify-content: center
+	h2
+		font-size: toRem(32)
+
+.profile_settings
+	h1
+		margin-bottom: toRem(10)
+	header
+		display: flex
+		align-items: center
+		// justify-content: space-around
+		width: 100%
+		margin: toRem(35) 0
+		div
+			margin-right: toRem(20)
+
+	p
+		font-size: toRem(18)
+	> p
+		margin: 0 0 toRem(35) 0
+	span
+		display: block
+		border: toRem(1) solid $text-1
+		color: $text-1
+		border-radius: toRem(5)
+		margin: toRem(20) 0
+		position: relative
+		[type="text"]
+			width: 100%
+			background-color: unset
+			border: 0
+			padding: toRem(10) toRem(15)
+
+		label
+			position: absolute
+			color: $text-1
+			top: toRem(-13)
+			left: toRem(13)
+			background-color: $main
+			padding: 0 toRem(10)
+			font-size: toRem(18)
+		input
+			color: $text-1
+			font-size: toRem(18)
+
+.aesthetic
+	input
+		width: 0
+		height: 0
+		visibility: hidden
+		&:checked
+			& + label
+				background-color: $text-1
+				&::after
+					left: calc(100% - 5px)
+					transform: translateX(-100%)
+	label
+		cursor: pointer
+		width: toRem(70)
+		height: toRem(40)
+		background-color: $details-grey-light
+		border-radius: toRem(100)
+		position: relative
+		margin-right: toRem(10)
+		&:after
+			content: ''
+			position: absolute
+			top: toRem(5)
+			left: toRem(5)
+			width: toRem(30)
+			height: toRem(30)
+			background-color: $details-grey-dark
+			border-radius: toRem(90)
+			transition: 0.2s
+		&:active
+			&::after
+				width: toRem(30)
+.checkbox
+	display: flex
+	align-items: center
+	p
+		margin: auto 0
+		font-size: toRem(18)
+
+.conditions
+	p
+		font-size: toRem(18)
+		color: $details-violet
+		text-decoration: underline
+
+.save_settings
+	width: 100%
+	display: flex
+	justify-content: flex-end
+.settings
+	button
+		border: 0
+		padding: toRem(6) toRem(8)
+		margin: 0 toRem(8)
+		border-radius: toRem(5)
+		font-family: $futura
+		font-size: toRem(18)
+		cursor: pointer
+		transition: background-color 200ms linear
+.button_modify
+	background-color: $details-violet
+	color: $details-grey-dark
+	&:hover
+		background-color: $details-violet-hover !important
+.button_delete
+	background-color: $details-grey-light
+	color: $text-1
+	&:hover
+		background-color: $details-grey-light-hover
+.delete_account button
+	background-color: transparent
+	color: $text-1
+	margin-top: toRem(20)
+	font-family: $futura
+	.icone_menu
+		position: relative
+		top: toRem(6)
+	p
+		display: inline
+		font-size: toRem(18)
+
+@media screen and (min-width: 901px)
+	.settings
+		position: relative
+		width: 100%
+		max-width: toRem(700)
+		&>section:first-child
+			&>div
+				width: 60%
+		&>section:last-child
+			position: absolute
+			top: 0
+			right: 0

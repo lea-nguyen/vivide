@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
+*, ::after, ::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  src: url("../fonts/futura/Futura-Bold.woff2") format("woff2");
+  font-family: "Futura";
+  font-weight: bold;
+  font-size: toRem(30);
+}
+
+@font-face {
+  src: url("../fonts/futura/Futura-Book.woff2") format("woff2");
+  font-family: "Futura";
+  font-weight: bold;
+  font-size: normal;
+}
+
+body {
+  margin: 0;
+  background-color: #464646;
+  color: #FFFFFF;
+  font-family: "Futura";
+}
+
+.body_register {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.register {
+  vertical-align: middle;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  padding: 3.125rem 3.125rem;
+}
+
+.register h1 {
+  font-size: 2.625rem;
+  margin: 0 0 0.625rem 0;
+}
+
+.register > p {
+  font-size: 1.25rem;
+}
+
+.register p {
+  margin: 0 0 0.625rem 0;
+}
+
+.register button {
+  background-color: #272727;
+  border: 0;
+  padding: 0.625rem 0.5rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto auto 1.25rem auto;
+  border-radius: 0.3125rem;
+}
+
+form {
+  display: inline-block;
+  width: 100%;
+}
+
+form .label {
+  position: absolute;
+  background-color: #464646;
+  left: 1.25rem;
+  top: -0.625rem;
+  padding: 0 0.625rem;
+  z-index: 1;
+}
+
+form .input_label {
+  position: relative;
+}
+
+form ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+form ul li {
+  font-size: 0.875rem;
+}
+
+input.reg_input {
+  display: block;
+  width: 100%;
+  background-color: #464646;
+  color: #A2A2A2 !important;
+  border: 0;
+  padding: 0.75rem 1.25rem;
+  border: 0.0625rem solid #FFFFFF;
+  border-radius: 0.3125rem;
+  margin: 1.25rem 0;
+}
+
+input.reg_input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0px 9999px #464646;
+}
+
+input.reg_input::first-line {
+  color: #A2A2A2 !important;
+  font-size: 0.875rem;
+}
+
+[type="checkbox"] {
+  display: inline;
+  width: auto;
+  margin-top: 0.625rem;
+}
+
+button.register {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  padding: 0.625rem 3.125rem;
+  color: #272727;
+  font-family: "Futura";
+  font-size: 1rem;
+  background-color: #AF77FF;
+  border: 0;
+  border-radius: 0.4375rem;
+  margin: 1.25rem auto;
+  cursor: pointer;
+}
+
+a {
+  display: block;
+}
+
+a span {
+  color: #AF77FF;
+}
+
+.img_register {
+  display: none;
+}
+
+.forgot {
+  color: #AF77FF;
+  text-align: right;
+}
+
+.remember_input_label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-bottom: 1.25rem;
+}
+
+.remember_input_label input {
+  padding: 0;
+  margin: auto 0.625rem auto 0;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.hide_pswd {
+  position: relative;
+}
+
+.eye {
+  position: absolute;
+  right: 1rem;
+  top: 0.8rem;
+}
+
+@media screen and (min-width: 700px) {
+  .input.reg_input {
+    width: 100%;
+  }
+  .img_register {
+    width: 49%;
+    height: 100vh;
+    background-color: #FFFFFF;
+    vertical-align: middle;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .img_register img {
+    width: 70%;
+    height: auto;
+  }
+}
+/*# sourceMappingURL=register.css.map */

@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
+*, ::after, ::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  src: url("../fonts/futura/Futura-Bold.woff2") format("woff2");
+  font-family: "Futura";
+  font-weight: bold;
+  font-size: toRem(30);
+}
+
+@font-face {
+  src: url("../fonts/futura/Futura-Book.woff2") format("woff2");
+  font-family: "Futura";
+  font-weight: bold;
+  font-size: normal;
+}
+
+.menu_contain {
+  width: 15.625rem;
+  height: 100%;
+  font-family: "Futura";
+}
+
+.menu_contain, .menu {
+  display: initial;
+}
+
+.menu {
+  width: 15.625rem;
+  height: 100%;
+  padding: 2.1875rem 0 0 2.1875rem;
+  background-color: #272727;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.menu img {
+  width: 6.875rem;
+  height: auto;
+  margin: auto;
+}
+
+.menu a, .menu .a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.3125rem 0;
+  padding: 0.625rem 0.9375rem;
+  border-radius: 0.625rem 0 0 0.625rem;
+  font-size: 1.125rem;
+}
+
+.menu nav {
+  padding-top: 3vh;
+  cursor: pointer;
+}
+
+.icone_menu {
+  margin-right: 0.625rem;
+  cursor: pointer;
+}
+
+.icone {
+  margin-left: 0.625rem;
+  cursor: pointer;
+}
+
+.icone_fleche {
+  margin-left: 0.3125rem;
+  cursor: pointer;
+}
+
+.isActiveLevel1 {
+  background-color: #464646;
+  color: #AF77FF;
+  text-decoration: none;
+}
+
+.isActiveLevel2 {
+  color: #AF77FF;
+}
+
+@media screen and (min-width: 901px) {
+  .menu, .menu_contain {
+    width: 18.125rem;
+  }
+}
+
+@media screen and (max-width: 701px) {
+  .outside {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+  .menu_contain, .menu {
+    display: none;
+  }
+  .menu {
+    width: 15.625rem;
+    height: 100%;
+    padding: 2.1875rem 0 0 2.1875rem;
+    background-color: #272727;
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    left: 0;
+  }
+  .search_header {
+    width: 50%;
+  }
+  .profile {
+    padding: 0.3125rem;
+    background-color: #AF77FF;
+    border-radius: 50%;
+  }
+  .profile .icone {
+    padding: 0;
+    display: none;
+  }
+  .profile P {
+    margin: 0;
+  }
+}
+
+@-webkit-keyframes slide {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes slide {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+/*# sourceMappingURL=menu.css.map */

@@ -1,0 +1,43 @@
+table {
+    border-collapse: collapse;
+    font-size: toRem(18);
+
+
+    tr {
+        text-align: left;
+      
+        &:nth-child(1){
+            border-bottom: toRem(1) $blanc solid;
+        }
+    }
+
+    th {
+        padding: toRem(20);
+    }
+
+    td {
+        padding:  toRem(20) toRem(20);
+        font-size: toRem(16);
+        line-height: 120%;
+       
+    }
+
+}
+
+
+table [type="submit"] {
+    display: inline-block;
+    border: toRem(1) solid #000;
+    color: #000;
+    padding: toRem(5) toRem(10);
+    margin: toRem(2) 0;
+    text-decoration: none;
+}
+
+[type="submit"]:not(table [type="submit"]) {
+    display: inline-block;
+    border: toRem(1) solid #000;
+    color: #000;
+    padding: toRem(5) toRem(10);
+    margin: toRem(15) 0;
+}

@@ -1,0 +1,66 @@
+
+
+.container {
+    width: 100%;
+    margin: toRem(100) 0;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+// INPUT
+.identifiant,
+.mdp{
+    position: relative;
+
+    label{
+        // position: absolute; 
+        // top: toRem(15);
+        // left: toRem(10);
+        background-color:$background;
+        padding: 0 toRem(10)
+    }
+
+
+    input {
+        all: unset;
+        background-color: $background;
+        border: 1px solid $blanc;
+        border-radius: toRem(5);
+        height: toRem(20);
+        padding: toRem(10) toRem(10);
+        margin: toRem(5) 0 toRem(20) 0;
+        font-size: toRem(16);
+    }
+}
+
+// FORMULAIRE CONNEXION
+form {
+    font-size: toRem(18); 
+}
+
+// BOUTON
+.btn input {
+display: block !important;
+margin:auto !important;
+    background-color:$violet;
+    font-family: $futura;
+    border: none;
+    padding: toRem(10) toRem(40) !important;
+    border-radius: toRem(6);
+    transition: 0.3s;
+    font-size: toRem(18);
+
+    &:hover {
+        background-color: #D9BEFF;
+    }
+}
+
+// MESSAGE 
+.message {
+    background-color:$noir;
+    width: fit-content;
+    margin: auto;
+    padding: toRem(10) toRem(20);
+}

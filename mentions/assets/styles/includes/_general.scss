@@ -1,0 +1,44 @@
+body {
+    background-color: $background;
+    font-family: $futura;
+    color: $blanc;
+    padding: toRem(45) toRem(26);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1 {
+    font-size: toRem(32);
+    font-family: $lato;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: toRem(24);
+    font-family: $lato;
+    font-weight: bold;
+    margin-bottom: toRem(20);
+    color: $violet;
+}
+
+h3 {
+    font-size: toRem(20);
+    color: $violet;
+    font-weight: bold;
+}
+
+p {
+    line-height: 140%;
+    margin: toRem(15) 0;
+}
+
+a {
+    color: $violet;
+}
+
+
+li {
+    margin-bottom:toRem(8);
+}

@@ -1,0 +1,92 @@
+@import 'var'
+
+.menu_contain
+  width: toRem(250)
+  height: 100%
+  font-family: $futura
+
+.menu_contain,.menu
+  display: initial
+
+.menu
+  width: toRem(250)
+  height: 100%
+  padding: toRem(35) 0 0 toRem(35)
+  background-color: $details-grey-dark
+  position: fixed
+  top: 0
+  left: 0
+  img
+    width: toRem(110)
+    height: auto
+    margin: auto
+  a,.a
+    display: flex
+    align-items: center
+    margin: toRem(5) 0
+    padding: toRem(10) toRem(15)
+    border-radius: toRem(10) 0 0 toRem(10)
+    font-size: toRem(18)
+  nav
+    padding-top: 3vh
+    cursor: pointer
+
+.icone_menu
+  margin-right: toRem(10)
+  cursor: pointer
+
+.icone
+  margin-left: toRem(10)
+  cursor: pointer
+
+.icone_fleche
+  margin-left: toRem(5)
+  cursor: pointer
+
+.isActiveLevel1
+  background-color: $main
+  color: $details-violet
+  text-decoration: none
+.isActiveLevel2
+  color: $details-violet
+
+@media screen and (min-width: 901px)
+  .menu,.menu_contain
+    width: toRem(290)
+
+@media screen and ( max-width: 701px )
+  .outside
+    width: 100vw
+    height: 100%
+    position: absolute
+    z-index: -1
+  .menu_contain,.menu
+    display: none
+  .menu
+    width: toRem(250)
+    height: 100%
+    padding: toRem(35) 0 0 toRem(35)
+    background-color: $details-grey-dark
+    position: fixed
+    z-index: 20
+    top: 0
+    left: 0
+  .search_header
+    width: 50%
+  .profile
+    padding: toRem(5)
+    background-color: $details-violet
+    border-radius: 50%
+    .icone
+      padding: 0
+      display: none
+    P
+      margin: 0
+    .profile_info
+      // padding: 0
+
+@keyframes slide
+  0%
+    transform: translateX(-100%)
+  100%
+    transform: translateX(0%)

@@ -1,0 +1,46 @@
+*,::after,::before
+  box-sizing: border-box
+
+$main: #464646
+$details-grey-dark: #272727
+$details-violet: #AF77FF
+$details-violet-hover: #D9BEFF
+$details-grey-light: #323232
+$details-grey-light-hover: #6E6E6E
+$text-1: #FFFFFF
+$text-2: #A2A2A2
+
+// $border-radius-big: toRem(10)
+// $border-radius-small: toRem(5)
+$margin-big: toRem(26)
+$margin-small: toRem(20)
+$futura-font-path: "../fonts/futura"
+$futura: "Futura"
+$lato: "Lato"
+
+@font-face
+  src: url("../fonts/futura/Futura-Bold.woff2") format("woff2")
+  font-family: "Futura"
+  font-weight: bold
+  font-size: toRem(30)
+
+@font-face
+  src: url("../fonts/futura/Futura-Book.woff2") format("woff2")
+  font-family: "Futura"
+  font-weight: bold
+  font-size: normal
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap')
+
+@function toRem($value)
+  $remValue: ($value / 16) + rem
+  @return $remValue
+
+@mixin line-clamp($lines, $line-height)
+  display: block
+  display: -webkit-box
+  -webkit-line-clamp: $lines
+  -webkit-box-orient: vertical
+  max-height: $lines * $line-height
+  text-overflow: ellipsis
+  overflow: hidden
