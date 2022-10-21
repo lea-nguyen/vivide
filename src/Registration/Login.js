@@ -43,7 +43,7 @@ class Login extends SignUp {
     };
     // send data to check user
     axios
-      .post("https://api.vivide.app/login.php", JSON.stringify(data), {
+      .post("https://apivivide.leanguyen.fr/login.php", JSON.stringify(data), {
         headers: {
           "Content-Type": "application/json",
         },
@@ -60,7 +60,7 @@ class Login extends SignUp {
           } else {
             document.cookie = "token=" + response.data.token + ";path=/;secure";
           }
-          window.location.href = "https://vivide.app/";
+          window.location.href = "https://vivide.leanguyen.fr/";
           // window.location.href = "http://localhost:3000/";
         }
       });
@@ -82,7 +82,7 @@ class Login extends SignUp {
       <div className="register">
       <Helmet>
           <title>Connexion</title>
-          <link rel="canonical" href="https://vivide.app/identification/connexion" />
+          <link rel="canonical" href="https://vivide.leanguyen.fr/identification/connexion" />
       </Helmet>
         <h1>Connexion</h1>
         <p>Accédez à l'expérience Vivide&nbsp;!</p>
@@ -126,7 +126,7 @@ class Login extends SignUp {
             <label htmlFor="remember">Se souvenir de moi</label>
           </div>
 
-          <a className="forgot" href="https://vivide.app/support/request.php">
+          <a className="forgot" href="https://vivide.leanguyen.fr/support/request.php">
             Mot de passe oublié&nbsp;?
           </a>
           <button className="register" onClick={this.login}>

@@ -1,6 +1,6 @@
 <?php
 
-require("../private/connect.php");
+    require("../private/connect.php");
 
         
     //Insertion du mail dans la BDD

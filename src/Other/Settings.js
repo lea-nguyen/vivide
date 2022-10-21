@@ -97,7 +97,7 @@ function Settings() {
     // make the change request 
     if(payload.username !=document.querySelector("#inputName").value || payload.usermail!=document.querySelector("#inputEmail").value){
       axios
-        .post("https://api.vivide.app/change_user.php", JSON.stringify(data), {
+        .post("https://apivivide.leanguyen.fr/change_user.php", JSON.stringify(data), {
           headers: {
             "Content-Type": "application/json",
           },
@@ -128,7 +128,7 @@ function Settings() {
     // user want to delete account
     if(document.cookie!=""){
       if (window.confirm("Vous souhaitez nous quitter ? :c")) {
-        axios.post("https://api.vivide.app/supprimer.php",JSON.stringify({token:token}), {
+        axios.post("https://apivivide.leanguyen.fr/supprimer.php",JSON.stringify({token:token}), {
           headers: {
             'Content-Type': 'application/json'
           }
@@ -147,7 +147,7 @@ function Settings() {
     <div className="settings">
       <Helmet>
         <title>Mes paramètres</title>
-        <link rel="canonical" href="https://vivide.app/settings" />
+        <link rel="canonical" href="https://vivide.leanguyen.fr/settings" />
       </Helmet>
       <section>
         <div className="profile_settings">
@@ -208,13 +208,13 @@ function Settings() {
       </div>
       <section className="conditions">
         <h1>Conditions</h1>
-        <a href="https://vivide.app/mentions/mentionslegales.html">
+        <a href="https://vivide.leanguyen.fr/mentions/mentionslegales.html">
           <p>Mentions légales</p>
         </a>
-        <a href="https://vivide.app/mentions/politique.html">
+        <a href="https://vivide.leanguyen.fr/mentions/politique.html">
           <p>Polique de confidentialité</p>
         </a>
-        <a href="https://vivide.app/landing-page.php">
+        <a href="https://vivide.leanguyen.fr/landing-page.php">
           <p>Qu'est-ce-que Vivide?</p>
         </a>
       </section>

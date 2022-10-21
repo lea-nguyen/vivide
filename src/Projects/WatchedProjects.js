@@ -44,7 +44,7 @@ const WatchedProjects = (props) => {
             /*END OF https://www.tabnine.com/academy/javascript/how-to-get-cookies/, the 24/02/2022 at 02:24*/
             
             // validate token before accessing someone's informations aka you only
-            axios.post("https://api.vivide.app/validatejwt.php",JSON.stringify(postData), {
+            axios.post("https://apivivide.leanguyen.fr/validatejwt.php",JSON.stringify(postData), {
                     headers: {
                         'Content-Type': 'application/json'
                     }
@@ -63,7 +63,7 @@ const WatchedProjects = (props) => {
                         }
                         if(props.number!=undefined){
                             // project from history
-                            axios.post("https://api.vivide.app/history.php",JSON.stringify(postData), {
+                            axios.post("https://apivivide.leanguyen.fr/history.php",JSON.stringify(postData), {
                                 headers: {
                                     'Content-Type': 'application/json'
                                 }
@@ -76,7 +76,7 @@ const WatchedProjects = (props) => {
                             
                         }else{
                             //liked video
-                            axios.post("https://api.vivide.app/like.php",JSON.stringify(postData), {
+                            axios.post("https://apivivide.leanguyen.fr/like.php",JSON.stringify(postData), {
                                 headers: {
                                     'Content-Type': 'application/json'
                                 }

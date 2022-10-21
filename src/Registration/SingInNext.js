@@ -60,7 +60,7 @@ class SignInNext extends SignUp {
   signIn() {
     // check username
     axios
-      .get("https://api.vivide.app/getUsers.php")
+      .get("https://apivivide.leanguyen.fr/getUsers.php")
       .then((response) => {
         response.data.forEach((user) => {
           if (user.pseudo == this.state.username) {
@@ -86,7 +86,7 @@ class SignInNext extends SignUp {
 
           // signin the user
           axios
-            .post("https://api.vivide.app/signin.php", JSON.stringify(data), {
+            .post("https://apivivide.leanguyen.fr/signin.php", JSON.stringify(data), {
               headers: {
                 "Content-Type": "application/json",
               },
@@ -96,7 +96,7 @@ class SignInNext extends SignUp {
               sessionStorage.clear();
             })
             .then(() => {
-              window.location.href = "https://vivide.app/identification/connexion";
+              window.location.href = "https://vivide.leanguyen.fr/identification/connexion";
               // window.location.href ="http://localhost:3000/identification/connexion";
             });
         } else {
@@ -109,7 +109,7 @@ class SignInNext extends SignUp {
       <div className="register">
         <Helmet>
             <title>Inscription : Etape n°2</title>
-            <link rel="canonical" href="https://vivide.app/inscription/next" />
+            <link rel="canonical" href="https://vivide.leanguyen.fr/inscription/next" />
         </Helmet>
         <button>
           <Link to="../inscription">Retour</Link>

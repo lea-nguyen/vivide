@@ -6,7 +6,7 @@ const VideosPlaylist = (props) => {
     const [dataVideo, setDataVideo] = useState([]);
     // get the videos of project
     useEffect(() => {
-        axios.get(`https://api.vivide.app//playlist.php?`)
+        axios.get(`https://apivivide.leanguyen.fr//playlist.php?`)
             .then((response) => {
                 let videos = response.data.filter(video => video.project_url == props.project_url);
                 setDataVideo(videos);

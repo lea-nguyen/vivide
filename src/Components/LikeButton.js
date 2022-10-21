@@ -34,7 +34,7 @@ function LikeButton(props){
             }
             
             // validate token befor access someone's data aka yours only
-            axios.post("https://api.vivide.app/validatejwt.php",JSON.stringify(data), {
+            axios.post("https://apivivide.leanguyen.fr/validatejwt.php",JSON.stringify(data), {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -46,7 +46,7 @@ function LikeButton(props){
                     }
                 }
                 // be able to un/like
-                axios.post("https://api.vivide.app/add_like.php",JSON.stringify(data), {
+                axios.post("https://apivivide.leanguyen.fr/add_like.php",JSON.stringify(data), {
                     headers: {
                         'Content-Type': 'application/json'
                     }

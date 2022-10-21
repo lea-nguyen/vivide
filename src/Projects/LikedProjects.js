@@ -8,7 +8,7 @@ class LikedProjects extends React.Component {
             <main className="home">
                 <Helmet>
                     <title>Mes vidéos aimées</title>
-                    <link rel="canonical" href="https://vivide.app/playlists/videos-aimees" />
+                    <link rel="canonical" href="https://vivide.leanguyen.fr/playlists/videos-aimees" />
                 </Helmet>
                 <h1>Mes vidéos aimées</h1>
                 <WatchedProjects class="projects" classclass='project'/>

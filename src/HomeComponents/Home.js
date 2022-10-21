@@ -10,7 +10,7 @@ class Home extends React.Component {
                 <Fragment>
                 <Helmet>
                     <title>Accueil</title>
-                    <link rel="canonical" href="https://vivide.app/" />
+                    <link rel="canonical" href="https://vivide.leanguyen.fr/" />
                     <meta name="description" content={`Vivide est une plateforme ayant pour objectif de diffuser des contenus vidéos type tutoriel de quelques minutes pour les utilisateurs qui souhaitent acquérir de nouvelles compétences dans divers domaines du multimédia. (design, développement, communication et audiovisuel). `} />
                 </Helmet>
                 <main className="home">

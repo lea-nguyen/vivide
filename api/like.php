@@ -5,9 +5,7 @@
 	require '../../vendor/autoload.php';
 	require('../../private/connect.php');
 
-	header('Access-Control-Allow-Headers: Origin, Content-Type, Accept');
-    header('Access-Control-Allow-Origin: https://vivide.app');
-    header('Content-Type: application/json , text/plain,charset=UTF-8');
+	require('header.php');
 
 
 	$data = json_decode(file_get_contents("php://input"), true);

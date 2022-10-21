@@ -23,7 +23,7 @@ class Menu extends React.Component {
   componentDidMount() {
     // manage menu
     let url = window.location.href;
-    let domain = "https://vivide.app";
+    let domain = "https://vivide.leanguyen.fr";
     // let domain = "http://localhost:3000";
     domain = domain.length;
     url = url.substring(domain);

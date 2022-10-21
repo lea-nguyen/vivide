@@ -112,8 +112,8 @@ class ProfilePicture extends React.Component {
     }else{
       return(
         <div className="not_log_profile">
-          <a className="inscrire" href="https://vivide.app/identification/inscription" target="_blank">S'inscrire</a>
-          <a className="se_connecter" href="https://vivide.app/identification/connexion" target="_blank">Se connecter</a>
+          <a className="inscrire" href="https://vivide.leanguyen.fr/identification/inscription" target="_blank">S'inscrire</a>
+          <a className="se_connecter" href="https://vivide.leanguyen.fr/identification/connexion" target="_blank">Se connecter</a>
         </div>
       )
     }
@@ -130,7 +130,7 @@ class Search extends React.Component {
     event.preventDefault();
     if(event.type=="onclick" || event.key=="Enter"){
       let filter = document.querySelector(".champ").value;
-      window.location.href = "https://vivide.app/query/" + filter;
+      window.location.href = "https://vivide.leanguyen.fr/query/" + filter;
     }
   }
   render() {

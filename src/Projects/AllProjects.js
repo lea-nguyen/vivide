@@ -20,7 +20,7 @@ class AllProjects extends Projects {
             <div>
                 <Helmet>
                     <title>Tous les parcours</title>
-                    <link rel="canonical" href="https://vivide.app/parcours/tous" />
+                    <link rel="canonical" href="https://vivide.leanguyen.fr/parcours/tous" />
                     <meta name="description" content='Retrouvez toutes les informations sur nos projets et nos tutoriels vidéos' />
                 </Helmet>
                 <h1>{this.props.title}</h1>

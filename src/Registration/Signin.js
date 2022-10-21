@@ -37,7 +37,7 @@ class SignIn extends SignUp {
     ){
       // verify email
         axios
-        .get("https://api.vivide.app/getUsers.php")
+        .get("https://apivivide.leanguyen.fr/getUsers.php")
         .then((response) => {
             response.data.forEach((user) => {
             if (user.email == this.state.email) {
@@ -51,7 +51,7 @@ class SignIn extends SignUp {
             if (same != true) {
             sessionStorage.setItem("pwd", pswd1.value);
             sessionStorage.setItem("email", document.querySelector('#email').value);
-            window.location.href = "https://vivide.app/identification/inscription/next";
+            window.location.href = "https://vivide.leanguyen.fr/identification/inscription/next";
             }
             return;
         });
@@ -119,7 +119,7 @@ class SignIn extends SignUp {
       <div className="register">
       <Helmet>
           <title>Inscription : Etape n°1</title>
-          <link rel="canonical" href="https://vivide.app/identification/inscription" />
+          <link rel="canonical" href="https://vivide.leanguyen.fr/identification/inscription" />
       </Helmet>
         <h1>Inscrivez-vous&nbsp;!</h1>
         <form>

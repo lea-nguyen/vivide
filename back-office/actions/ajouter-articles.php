@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if(session_id()!=$_SESSION["session"]){
-	header('Location : https://manager.vivide.app');
+	header('Location : https://managervivide.leanguyen.fr');
 	}
 
     $folder_name = $_POST["name"];

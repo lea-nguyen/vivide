@@ -10,7 +10,7 @@ class Playlists extends React.Component {
       <div className="history">
         <Helmet>
           <title>Apprends avec vivide</title>
-          <link rel="canonical" href="https://vivide.app/playlists" />
+          <link rel="canonical" href="https://vivide.leanguyen.fr/playlists" />
         </Helmet>
         <BackButton linkBack={"../"} />
         <h2>Historique des parcours</h2>

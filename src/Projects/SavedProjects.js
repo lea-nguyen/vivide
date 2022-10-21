@@ -37,7 +37,7 @@ const SavedProjects = (props) => {
     useEffect(() => {
         if(document.cookie!=""){
             // validate token before accessing someone's informations aka you only
-            axios.post("https://api.vivide.app/validatejwt.php",JSON.stringify(postData), {
+            axios.post("https://apivivide.leanguyen.fr/validatejwt.php",JSON.stringify(postData), {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -54,7 +54,7 @@ const SavedProjects = (props) => {
                         }
                     }
                     // get saved projects of user
-                    axios.post("https://api.vivide.app/my_projects.php",JSON.stringify(postData), {
+                    axios.post("https://apivivide.leanguyen.fr/my_projects.php",JSON.stringify(postData), {
                         headers: {
                             'Content-Type': 'application/json'
                         }
@@ -90,7 +90,7 @@ const SavedProjects = (props) => {
             <div className={props.class}>
                 <Helmet>
                     <title>Mes parcours sauvegardés</title>
-                    <link rel="canonical" href="https://vivide.app/parcours/mesparcours" />
+                    <link rel="canonical" href="https://vivide.leanguyen.fr/parcours/mesparcours" />
                 </Helmet>
                 <h1>Mes parcours enregistrés</h1>
                 {data.map((project) => (
@@ -103,7 +103,7 @@ const SavedProjects = (props) => {
             <div className={props.class}>
                 <Helmet>
                     <title>Mes parcours sauvegardés</title>
-                    <link rel="canonical" href="https://vivide.app/parcours/mesparcours" />
+                    <link rel="canonical" href="https://vivide.leanguyen.fr/parcours/mesparcours" />
                 </Helmet>
                 <h1>Mes parcours enregistrés</h1>
                 {data.map((project) => (

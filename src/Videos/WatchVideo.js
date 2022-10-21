@@ -49,7 +49,7 @@ function WatchVideo() {
 
       // validate token before accessing someone's informations aka you only
       axios
-        .post("https://api.vivide.app/validatejwt.php", JSON.stringify(data), {
+        .post("https://apivivide.leanguyen.fr/validatejwt.php", JSON.stringify(data), {
           headers: {
             "Content-Type": "application/json",
           },
@@ -68,7 +68,7 @@ function WatchVideo() {
             // able un/like video
             axios
               .post(
-                "https://api.vivide.app/add_like.php",
+                "https://apivivide.leanguyen.fr/add_like.php",
                 JSON.stringify(data),
                 {
                   headers: {
@@ -86,7 +86,7 @@ function WatchVideo() {
 
             // push project in history
             axios.post(
-              "https://api.vivide.app/push_history_projects.php",
+              "https://apivivide.leanguyen.fr/push_history_projects.php",
               JSON.stringify(data),
               {
                 headers: {
@@ -96,7 +96,7 @@ function WatchVideo() {
             );
             // push video in history
             axios.post(
-              "https://api.vivide.app/push_history_video.php",
+              "https://apivivide.leanguyen.fr/push_history_video.php",
               JSON.stringify(data),
               {
                 headers: {
@@ -108,14 +108,14 @@ function WatchVideo() {
         });
     }
     // get data of video
-    axios.get(`https://api.vivide.app/video.php?`).then((response) => {
+    axios.get(`https://apivivide.leanguyen.fr/video.php?`).then((response) => {
       let video = response.data.filter((vid) => vid.video_url.includes(video_url) && vid.video_url.length == video_url.length);
       setVideo(video[0]);
       document.querySelector("#exercice").innerHTML=video.exercice;
     });
     // get data of project
     axios
-      .get(`https://api.vivide.app/playlists.php?playlist=${project_url}`)
+      .get(`https://apivivide.leanguyen.fr/playlists.php?playlist=${project_url}`)
       .then((response) => setProject(response.data[0]));
   }, [project_url, video_url]);
 

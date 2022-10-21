@@ -2,9 +2,7 @@
 
     // Autoriser n'importe quel site web à récupérer en Javascript des données de cette API :
 
-	header('Access-Control-Allow-Headers: Origin, Content-Type, Accept');
-    header("Access-Control-Allow-Origin: https://vivide.app");
-    header('Content-Type: application/json , text/plain,charset=UTF-8');
+	require('header.php');
 
 	require('../../private/connect.php');
 
