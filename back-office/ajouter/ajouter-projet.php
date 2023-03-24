@@ -12,8 +12,8 @@
 <body>
 <?php
   session_start();
-  if(session_id()!==$_SESSION["session"]){
-  header('Location : https://manager.vivide.leanguyen.fr');
+  if(session_id()!=$_SESSION["session"]){
+  header('Location : https://managervivide.leanguyen.fr');
   }
 ?>
     <header>

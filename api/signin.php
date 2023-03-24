@@ -1,8 +1,6 @@
 <?php
 
-	header('Access-Control-Allow-Headers: Origin, Content-Type, Accept');
-    header("Access-Control-Allow-Origin: https://vivide.leanguyen.fr");
-    
+	require('header.php');
 
 	require '../../private/connect.php';
 

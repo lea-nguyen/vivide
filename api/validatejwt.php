@@ -3,9 +3,7 @@
 	require('../../private/secret.php');
 	require '../../vendor/autoload.php';
 
-	header('Access-Control-Allow-Headers: Origin, Content-Type, Accept');
-    header("Access-Control-Allow-Origin: https://vivide.leanguyen.fr");
-    
+    require('header.php');
 
 	$data = json_decode(file_get_contents("php://input"), true);
 	$token = $data["token"];

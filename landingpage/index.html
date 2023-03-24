@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HORIZON - Contact</title>
+    <link rel="stylesheet" href="formulaire.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" href="../../images/logo.png" type="image/x-icon">
+</head>
+<style>
+    input:required {
+        border: 1px solid #e52c2c;
+    }
+    input:required:valid {
+        border: 1px solid #1a961a;
+    }
+</style>
+<body>
+    <nav>
+        <a href="../index.html">Terminal</a>
+        <a href="../team/index.html">Team Horizon</a>
+        <a href="#">Contact</a>
+    </nav>
+    <section>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="box">
+            <img class="square" src="../../images/formulaire/bob2.png" alt="">
+            <img class="square" src="../../images/formulaire/horizon.png" alt="">
+            <img class="square" src="../../images/formulaire/bob2.png" alt="">
+            <img class="square" src="../../images/formulaire/horizon.png" alt="">
+            <img class="square" src="../../images/formulaire/bob2.png" alt="">
+            <img class="square" src="../../images/formulaire/horizon.png" alt="">
+           
+        </div>
+        <div class="container">
+            <div class="form">
+                <h2>CONTACT US&nbsp;!</h2>
+
+                <form action="envoi.php" method="post">
+
+                    <div class="inputBox">
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+
+
+                    <div class="inputBox">
+                        <input type="text" id="objet" name="objet" placeholder="Object" required>
+                        <textarea rows="5" cols="45" id="message" name="message" placeholder="Write us!" required></textarea>
+                    </div>
+
+                    <div class="inputBox">
+                        <input id="button" type="submit" name="envoyer" value="Submit">
+                    </div>
+
+                </form> 
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    $(document).ready(function(){
+        
+        $('.container').css('display','flex');
+
+        if(localStorage.getItem('langue')=="1"){
+            $('#objet').attr("placeholder", "Objet");
+            $('#message').attr("placeholder", "Ecrivez-nous!");
+            $('#button').attr("value", "Envoyer");
+        }
+    })
+</script>
+</html>

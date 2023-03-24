@@ -1,10 +1,6 @@
 <?php
     
-    // Autoriser n'importe quel site web à récupérer en Javascript des données de cette API :
-    header("Access-Control-Allow-Origin: https://vivide.leanguyen.fr");
-
-    // Fournir un résultat en JSON :
-    
+    require('header.php');
 
 	foreach($_POST as $key=>$value){
         $data = json_decode($key, true);
