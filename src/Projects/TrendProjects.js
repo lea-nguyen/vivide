@@ -2,7 +2,6 @@ import React from "react";
 import Filter from "../Components/Filter";
 import Projects from "./Projects";
 import PreviewProject from "./PreviewProject";
-import axios from "axios";
 
 class TrendProjects extends Projects {
     constructor(props){

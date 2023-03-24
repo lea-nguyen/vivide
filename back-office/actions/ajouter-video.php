@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	if(session_id()!=$_SESSION["session"]){
-	header('Location : https://manager.vivide.app');
+	if(session_id()!==$_SESSION["session"]){
+	header('Location : https://manager.vivide.leanguyen.fr');
 	}
     require '../../../private/connect.php';
     require '../../../private/vimeo.php';
@@ -25,7 +25,7 @@
     $tag = $stmtTag -> fetch(PDO::FETCH_ASSOC);
 	$uri="";
 
-    if (! $_FILES["content"]["size"]==0) {
+    if (! $_FILES["content"]["size"]===0) {
 	  
         $fileExtensionsAllowedVideo = ['mp4'];
         $fileName = $_FILES["content"]["name"];
@@ -54,7 +54,7 @@
 			$uriSplit = explode('/',$uri);
 		    $uri = end($uriSplit);
 		  
-            if (! $_FILES["thumbnail"]["size"]==0) {
+            if (! $_FILES["thumbnail"]["size"]===0) {
             
                 $fileExtensionsAllowedPhoto = ['jpeg','jpg','png'];
                 $fileName = $_FILES["thumbnail"]["name"];
@@ -83,7 +83,7 @@
             
                     if ($didUpload) {
                         require '../../../private/connect.php';
-                        $vidDirectory='https://vivide.app/uploads/videos/'.$folder_name.'/'.$fileName;
+                        $vidDirectory='https://vivide.leanguyen.fr/uploads/videos/'.$folder_name.'/'.$fileName;
                         $request = "INSERT INTO `videos` (`name_video`,`video_url`, `uri`, `description_vid`, `exercice`, `duration`, `tag`, `ext_project`, `position`,`thumbnail_vid`) VALUES (:nom, :slug, :link, :description_vid, :exercice, '{$_POST["duration"]}', :tag, :ext_project, :position,:thumbnail);";
                         $stmt = $db -> prepare($request);
                         $stmt -> bindParam(':ext_project', $_POST["project"], PDO::PARAM_INT);

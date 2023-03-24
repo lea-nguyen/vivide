@@ -1,10 +1,10 @@
 <?php
 
     // Autoriser n'importe quel site web à récupérer en Javascript des données de cette API :
-    header("Access-Control-Allow-Origin: https://vivide.app");
+    header("Access-Control-Allow-Origin: https://vivide.leanguyen.fr");
 
     // Fournir un résultat en JSON :
-    header('content-type:application/json');
+    
 
 	require('../../private/connect.php');
     $array = [];
@@ -17,7 +17,7 @@
         $stmt2 = $db->query($time);
         $time=$stmt2->fetch(PDO::FETCH_ASSOC);
 	  	$total = 0;
-		if($time["total"]!=""){
+		if($time["total"]!==""){
 		  $total = $time["total"];
 		}
 	  
@@ -28,7 +28,7 @@
         $videos=$stmt3->fetch(PDO::FETCH_ASSOC);
 	  
 	  	$nb_video = 0;
-		if($videos["total"]!=""){
+		if($videos["total"]!==""){
 		  $nb_video = $videos["total"];
 		}	  
 		array_push( $result, $nb_video);

@@ -4,8 +4,8 @@
 	require('../../vendor/autoload.php');
 
 	header('Access-Control-Allow-Headers: Origin, Content-Type, Methods, Headers');
-    header("Access-Control-Allow-Origin: https://vivide.app");
-    header('Content-Type: application/json');
+    header("Access-Control-Allow-Origin: https://vivide.leanguyen.fr");
+    
 	header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
 	header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
 
@@ -21,7 +21,7 @@
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
     $stmt->execute();
     $user = $stmt -> fetch(PDO::FETCH_ASSOC);
-	if($stmt->rowcount()==1 && password_verify($password,$user["password"])){
+	if($stmt->rowcount()===1 && password_verify($password,$user["password"])){
 		$userId = $user["id_user"];
 		$username = $user["pseudo"];
 		$userMail = $user["email"];

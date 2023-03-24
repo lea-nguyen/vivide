@@ -1,7 +1,7 @@
 <?php
   session_start();
-  if(session_id()!=$_SESSION["session"]){
-  header('Location : https://manager.vivide.app');
+  if(session_id()!==$_SESSION["session"]){
+  header('Location : https://manager.vivide.leanguyen.fr');
   }
   require '../../../private/connect.php';
   $delete = "DELETE FROM `users` WHERE `users`.`id_user` = {$_GET["id"]}";

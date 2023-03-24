@@ -12,8 +12,8 @@
 <body>
 <?php
   session_start();
-  if(session_id()!=$_SESSION["session"]){
-  header('Location : https://manager.vivide.app');
+  if(session_id()!==$_SESSION["session"]){
+  header('Location : https://manager.vivide.leanguyen.fr');
   }
 ?>
     <header>
@@ -48,7 +48,7 @@
 
 
             <?php
-            if ($_SESSION["sadmin"] == 1) {
+            if ($_SESSION["sadmin"] === 1) {
                 echo "
                 <div class='menulien comptesadmin'>
                 <span class='iconify' data-icon='healthicons:ui-secure' data-width='18' data-height='18'></span>
@@ -78,7 +78,7 @@
             <?php
 			require '../../private/connect.php';
             $request = "SELECT * FROM `users` ORDER BY {$_GET["by"]} DESC";
-            if ($_GET["order"] == 1) {
+            if ($_GET["order"] === 1) {
                 $request = "SELECT * FROM `projects` ORDER BY {$_GET["by"]} ASC";
             }
             $stmt = $db->query($request);
@@ -88,7 +88,7 @@
                     <td><?php echo $user["email"] ?></td>
                     <td><?php echo $user["pseudo"] ?></td>
 <?php
-  				if($_SESSION["sadmin"] == 1){
+  				if($_SESSION["sadmin"] === 1){
 ?>
                      <td><a href="ajouter/modifier-user.php?id=<?php echo $user["id_user"] ?>">
                             <span class="iconify" data-icon="ri:delete-bin-6-fill" data-width="20" data-height="20"></span></a></td>

@@ -15,7 +15,7 @@ const Results = () => {
     let resV = [];
     useEffect(() => {
     // get all projects filtered with query research
-      axios.get(`https://api.vivide.app/playlists.php?`)
+      axios.get(`https://apivivide.leanguyen.fr/playlists.php?`)
             .then((response) => {
                 response.data.forEach(project => {
                     if(project.name_project.toLowerCase().includes(filtered) || project.description.toLowerCase().includes(filtered)){
@@ -25,7 +25,7 @@ const Results = () => {
             })
             .then(() => {setProjects(resP)})
     // get all video filtered with query research
-      axios.get(`https://api.vivide.app//playlist.php?`)
+      axios.get(`https://apivivide.leanguyen.fr//playlist.php?`)
             .then((response) => {
                 console.log();
                 response.data.forEach(video => {
@@ -41,10 +41,9 @@ const Results = () => {
         <div className="results">
             <Helmet>
                 <title>{filter}</title>
-                <link rel="canonical" href={`https://vivide.app/query/${filter}`} />
+                <link rel="canonical" href={`https://vivide.leanguyen.fr/query/${filter}`} />
                 <meta name="description" content={`Retrouvez toutes les informations sur nos projets et nos tutoriels vidéos correspondants à votre recherche ${filter}`} />
             </Helmet>
-            <Filter filters={["Tous","Audiovisuel","Design","Développement"]}/>
             {projects.map((playlist) => (
                 <PreviewProject data={playlist} class="project" key={playlist.id_project} />
             ))}

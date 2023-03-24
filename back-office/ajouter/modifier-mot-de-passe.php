@@ -22,7 +22,7 @@
     verify=()=>{
         let pswd = document.querySelector('#pswd').value;
         let pswd2 = document.querySelector('#pswd2').value;
-        if(pswd==pswd2){
+        if(pswd===pswd2){
             button.disabled=false;
         }
     }

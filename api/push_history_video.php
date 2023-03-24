@@ -6,8 +6,8 @@
 	require('../../private/connect.php');
 
 	header('Access-Control-Allow-Headers: Origin, Content-Type, Accept');
-    header('Access-Control-Allow-Origin: https://vivide.app');
-    header('Content-Type: application/json , text/plain,charset=UTF-8');
+    header("Access-Control-Allow-Origin: https://vivide.leanguyen.fr");
+    
 
 	$data = json_decode(file_get_contents("php://input"), true);
 	$token = $data["token"];
@@ -28,7 +28,7 @@
     $stmt -> execute();
 	$result = $stmt ->fetchAll(PDO::FETCH_ASSOC);
 
-	if($result[0]["ext_vid"]!=$ids[0]["id_video"]){
+	if($result[0]["ext_vid"]!==$ids[0]["id_video"]){
 		$request = "INSERT INTO `rel_playlist` (`id_rel_play`, `ext_user`, `ext_vid`, `ext_proj`,`playlist`) VALUES (NULL, :user, :video, :project,'3');";
 		$stmt = $db -> prepare($request);
 		$stmt->bindParam(':user',$userid,PDO::PARAM_INT);

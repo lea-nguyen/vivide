@@ -13,8 +13,8 @@
 	require '../../vendor/phpmailer/phpmailer/src/SMTP.php';
 
 	header('Access-Control-Allow-Headers: Origin, Content-Type, Accept');
-    header("Access-Control-Allow-Origin: https://vivide.app");
-    header('Content-Type: application/json , text/plain,charset=UTF-8');
+    header("Access-Control-Allow-Origin: https://vivide.leanguyen.fr");
+    
 
 	$data = json_decode(file_get_contents("php://input"), true);
 
@@ -29,16 +29,16 @@
     $stmt->bindParam(':userid', $userid, PDO::PARAM_INT);
     $stmt->execute();
 
-    if($stmt->rowcount()==1){
+    if($stmt->rowcount()===1){
 
-        if($name!=""){
+        if($name!==""){
             $change = "UPDATE `users` SET pseudo = $name WHERE id_user=:userid";
             $stmt=$db -> prepare($change);
             $stmt->bindParam(':userid', $userid, PDO::PARAM_INT);
             $stmt->execute();
         }
 	
-        if($email!=""){            
+        if($email!==""){            
             //PREP var
 			$payload = [
 			  'iat' => time(),

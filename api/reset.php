@@ -16,9 +16,9 @@
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
     $stmt->execute();
 
-    if($stmt->rowcount()==0){
+    if($stmt->rowcount()===0){
       header('Location : request.php?c=error');
-	  //}else if($stmt2->rowcount()==1){
+	  //}else if($stmt2->rowcount()===1){
 	}else{
 	  //GET array
 	  $data=$stmt->fetch(PDO::FETCH_ASSOC);

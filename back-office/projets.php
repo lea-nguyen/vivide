@@ -13,8 +13,8 @@
 <body>
 <?php
   session_start();
-  if(session_id()!=$_SESSION["session"]){
-  header('Location : https://manager.vivide.app');
+  if(session_id()!==$_SESSION["session"]){
+  header('Location : https://manager.vivide.leanguyen.fr');
   }
 ?>
     <header>
@@ -49,7 +49,7 @@
 
 
             <?php
-            if ($_SESSION["sadmin"] == 1) {
+            if ($_SESSION["sadmin"] === 1) {
                 echo "
 
                 <div class='menulien comptesadmin'>
@@ -92,9 +92,9 @@
                 <?php
                 $th = array("projets" => "name_project", "auteur" => "professor", "durée" => "duration", "date" => "date_projet");
                 foreach ($th as $key => $value) {
-                    if ($key == "durée") {
+                    if ($key === "durée") {
                         echo "<th>" . ucfirst($key) . "</th>";
-                    } else if ($value == $_GET["by"]) {
+                    } else if ($value === $_GET["by"]) {
                         $order = $_GET["order"] ? 0 : 1;
                         echo "<th><a href='projets.php?order=$order&by=$value'>" . ucfirst($key) . "</a></th>";
                     } else {
@@ -106,7 +106,7 @@
             <?php
 			require '../../private/connect.php';
             $request = "SELECT * FROM `projects`,`admin` WHERE `projects`.ext_admin=`admin`.id_admin ORDER BY {$_GET["by"]} DESC";
-            if ($_GET["order"] == 1) {
+            if ($_GET["order"] === 1) {
                 $request = "SELECT * FROM `projects`,`admin` WHERE `projects`.ext_admin=`admin`.id_admin ORDER BY {$_GET["by"]} ASC";
             }
             $stmt = $db->query($request);
@@ -119,7 +119,7 @@
                 <tr>
                     <td><?php echo $data["name_project"] ?></td>
                     <td><?php echo $data["name_admin"] ?></td>
-				  <td><?php if($time["total"]==0){echo "0";}else{echo $time["total"];}?>'</td>
+				  <td><?php if($time["total"]===0){echo "0";}else{echo $time["total"];}?>'</td>
                     <td><?php echo $data["date_projet"] ?></td>
                     <td><a href="ajouter/modifier-projet.php?id=<?php echo $data["id_project"] ?>"><span class="iconify" data-icon="ri:delete-bin-6-fill" data-width="20" data-height="20"></span>
                         </a></td>

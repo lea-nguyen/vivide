@@ -17,11 +17,12 @@ class Login extends SignUp {
     this.handleRemember = this.handleRemember.bind(this);
     this.login = this.login.bind(this);
     this.hide = this.hide.bind(this);
+    this.disabled = this.disabled.bind(this);
   }
   componentDidMount(){
     // to hide the pswd
     document.querySelector('.openEye').style.display="none";
-    if(localStorage.getItem('vivide_mode')==''){
+    if(localStorage.getItem('vivide_mode')===''){
       localStorage.setItem('vivide_mode',true);
     }
   }
@@ -30,6 +31,9 @@ class Login extends SignUp {
     this.setState((state) => ({
       remember: !state.remember,
     }));
+  }
+  disabled() {
+    alert("Cette fonctionnalité n'est plus disponible.")
   }
   login(e) {
     e.preventDefault();
@@ -43,13 +47,13 @@ class Login extends SignUp {
     };
     // send data to check user
     axios
-      .post("https://api.vivide.app/login.php", JSON.stringify(data), {
+      .post("https://apivivide.leanguyen.fr/login.php", JSON.stringify(data), {
         headers: {
           "Content-Type": "application/json",
         },
       })
       .then((response) => {
-        if (response.status == 200 && response.data != 0) {
+        if (response.status === 200 && response.data !== 0) {
           // set cookie expiry date
           let expiryDate = new Date();
           const month = (expiryDate.getMonth() + 1) % 12;
@@ -60,18 +64,18 @@ class Login extends SignUp {
           } else {
             document.cookie = "token=" + response.data.token + ";path=/;secure";
           }
-          window.location.href = "https://vivide.app/";
+          window.location.href = "https://vivide.leanguyen.fr/";
           // window.location.href = "http://localhost:3000/";
         }
       });
   }
   hide(event){
     // hide show pswd
-    if (event.type == "mousedown") {
+    if (event.type === "mousedown") {
       document.querySelector('.openEye').style.display="initial";    
       document.querySelector('.hideEye').style.display="none"; 
       document.querySelector('.hide_pswd').setAttribute('type','text');
-    } else if (event.type == "mouseup"){
+    } else if (event.type === "mouseup"){
       document.querySelector('.hideEye').style.display="initial";    
       document.querySelector('.openEye').style.display="none";
       document.querySelector('.hide_pswd').setAttribute('type','password');
@@ -82,7 +86,7 @@ class Login extends SignUp {
       <div className="register">
       <Helmet>
           <title>Connexion</title>
-          <link rel="canonical" href="https://vivide.app/identification/connexion" />
+          <link rel="canonical" href="https://vivide.leanguyen.fr/identification/connexion" />
       </Helmet>
         <h1>Connexion</h1>
         <p>Accédez à l'expérience Vivide&nbsp;!</p>
@@ -126,10 +130,10 @@ class Login extends SignUp {
             <label htmlFor="remember">Se souvenir de moi</label>
           </div>
 
-          <a className="forgot" href="https://vivide.app/support/request.php">
+          <a className="forgot" onClick={this.disabled}>
             Mot de passe oublié&nbsp;?
           </a>
-          <button className="register" onClick={this.login}>
+          <button className="register" onClick={this.disabled}>
             Connexion
           </button>
         </form>

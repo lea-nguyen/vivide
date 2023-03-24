@@ -30,20 +30,20 @@ function SaveButton(props) {
 
       // validate you toke before accessing to someone's information aka you only
       axios
-        .post("https://api.vivide.app/validatejwt.php", JSON.stringify(data), {
+        .post("https://apivivide.leanguyen.fr/validatejwt.php", JSON.stringify(data), {
           headers: {
             "Content-Type": "application/json",
           },
         })
         .then((res) => {
-          if (res.data != "") {
-            if (res.data.token != props.token) {
+          if (res.data !== "") {
+            if (res.data.token !== props.token) {
               props.changeCookie(res.data.token);
             }
             // able to un/save a project
             axios
               .post(
-                "https://api.vivide.app/push_my_projects.php",
+                "https://apivivide.leanguyen.fr/push_my_projects.php",
                 JSON.stringify(data),
                 {
                   headers: {
@@ -52,7 +52,7 @@ function SaveButton(props) {
                 }
               )
               .then((response) => {
-                if (response.data == 0) {
+                if (response.data === 0) {
                   setButtonContent(true);
                 } else {
                   setButtonContent(false);

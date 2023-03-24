@@ -15,7 +15,7 @@ const Article = () => {
     // get the article information with axios
     axios
       .post(
-        "https://api.vivide.app/getArticle.php",
+        "https://apivivide.leanguyen.fr/getArticle.php",
         JSON.stringify({ article_url: article_url }),
         {
           headers: {
@@ -35,7 +35,7 @@ const Article = () => {
     <main className="article_main">
       <Helmet>
           <title>{data.name_article}</title>
-          <link rel="canonical" href={`https://vivide.app/${data.article_url}`} />
+          <link rel="canonical" href={`https://vivide.leanguyen.fr/${data.article_url}`} />
           <meta name="og:image" content={data.thumbnail_article}/>
           <meta name="og:description" content={`Notre nouvel article sur : ${data.name_article}`}/>
           <meta name="og:title" content={data.name_article}/>

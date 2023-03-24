@@ -38,7 +38,7 @@ class ProfilePicture extends React.Component {
   }
   componentDidMount() {
     // if has cookie aka is connected
-    if (document.cookie != "") {
+    if (document.cookie !== "") {
       // get the cookie
       /*FROM https://www.tabnine.com/academy/javascript/how-to-get-cookies/, the 24/02/2022 at 02:24*/
       const name = "token=";
@@ -46,7 +46,7 @@ class ProfilePicture extends React.Component {
       const cArr = cDecoded.split("; ");
       let res;
       cArr.forEach((val) => {
-        if (val.indexOf(name) == 0) {
+        if (val.indexOf(name) === 0) {
           res = val.substring(name.length);
         }
       });
@@ -112,8 +112,8 @@ class ProfilePicture extends React.Component {
     }else{
       return(
         <div className="not_log_profile">
-          <a className="inscrire" href="https://vivide.app/identification/inscription" target="_blank">S'inscrire</a>
-          <a className="se_connecter" href="https://vivide.app/identification/connexion" target="_blank">Se connecter</a>
+          <a className="inscrire" href="https://vivide.leanguyen.fr/identification/inscription" target="_blank">S'inscrire</a>
+          <a className="se_connecter" href="https://vivide.leanguyen.fr/identification/connexion" target="_blank">Se connecter</a>
         </div>
       )
     }
@@ -128,9 +128,9 @@ class Search extends React.Component {
   // submit query research
   enter(event) {
     event.preventDefault();
-    if(event.type=="onclick" || event.key=="Enter"){
+    if(event.type==="onclick" || event.key==="Enter"){
       let filter = document.querySelector(".champ").value;
-      window.location.href = "https://vivide.app/query/" + filter;
+      window.location.href = "https://vivide.leanguyen.fr/query/" + filter;
     }
   }
   render() {

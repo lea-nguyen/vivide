@@ -17,6 +17,11 @@ class SignInNext extends SignUp {
     this.handleBirth = this.handleBirth.bind(this);
     this.handleUsrname = this.handleUsrname.bind(this);
     this.verify = this.verify.bind(this);
+    this.disabled = this.disabled.bind(this);
+  }
+
+  disabled() {
+    alert("Cette fonctionnalité n'est plus disponible.")
   }
 
   componentDidMount() {
@@ -27,13 +32,15 @@ class SignInNext extends SignUp {
   }
   verify() {
     // check if everything is correct
+    console.log(document.querySelector("#buttonSignIn").checked)
+    console.log(this.state.username )
+    console.log(this.state.birth)
     if (
       document.querySelector("#buttonSignIn").checked &&
-      this.state.username != "" &&
-      this.state.birth != ""
+      this.state.username &&
+      this.state.birth
     ) {
-      document.querySelector("button.register").style.backgroundColor =
-        "#AF77FF";
+      document.querySelector("button.register").style.backgroundColor = "#AF77FF";
       document.querySelector("button.register").style.color = "#363636";
       document.querySelector("button.register").disabled = false;
     } else {
@@ -60,10 +67,10 @@ class SignInNext extends SignUp {
   signIn() {
     // check username
     axios
-      .get("https://api.vivide.app/getUsers.php")
+      .get("https://apivivide.leanguyen.fr/getUsers.php")
       .then((response) => {
         response.data.forEach((user) => {
-          if (user.pseudo == this.state.username) {
+          if (user.pseudo === this.state.username) {
             alert("Le nom d'utilisateur a déjà été choisi.");
             this.setState({
               do: false,
@@ -72,7 +79,7 @@ class SignInNext extends SignUp {
         });
       })
       .then(() => {
-        if (this.state.do && this.state.username != "") {
+        if (this.state.do && this.state.username !== "") {
           const username = this.state.username;
           const email = sessionStorage.getItem("email");
           const pwd = sessionStorage.getItem("pwd");
@@ -86,7 +93,7 @@ class SignInNext extends SignUp {
 
           // signin the user
           axios
-            .post("https://api.vivide.app/signin.php", JSON.stringify(data), {
+            .post("https://apivivide.leanguyen.fr/signin.php", JSON.stringify(data), {
               headers: {
                 "Content-Type": "application/json",
               },
@@ -96,7 +103,7 @@ class SignInNext extends SignUp {
               sessionStorage.clear();
             })
             .then(() => {
-              window.location.href = "https://vivide.app/identification/connexion";
+              window.location.href = "https://vivide.leanguyen.fr/identification/connexion";
               // window.location.href ="http://localhost:3000/identification/connexion";
             });
         } else {
@@ -109,7 +116,7 @@ class SignInNext extends SignUp {
       <div className="register">
         <Helmet>
             <title>Inscription : Etape n°2</title>
-            <link rel="canonical" href="https://vivide.app/inscription/next" />
+            <link rel="canonical" href="https://vivide.leanguyen.fr/inscription/next" />
         </Helmet>
         <button>
           <Link to="../inscription">Retour</Link>
@@ -124,7 +131,7 @@ class SignInNext extends SignUp {
             <input
               className="reg_input"
               type="text"
-              onChange={this.handleUsrname}
+              onKeyUp={this.handleUsrname}
               placeholder="ameliesmith"
             />
           </div>
@@ -133,7 +140,7 @@ class SignInNext extends SignUp {
               Date de naissance<span>*</span>
             </label>
             <input
-              class="reg_input birth"
+              className="reg_input birth"
               type="date"
               onChange={this.handleBirth}
               required
@@ -141,7 +148,7 @@ class SignInNext extends SignUp {
           </div>
           <div className="remember_input_label">
             <input
-              class="reg_input"
+              className="reg_input"
               type="checkbox"
               onClick={this.verify}
               id="buttonSignIn"
@@ -152,7 +159,7 @@ class SignInNext extends SignUp {
             </label>
           </div>
         </form>
-        <button className="register" onClick={this.signIn}>
+        <button className="register" onClick={this.disabled}>
           Confirmer
         </button>
       </div>

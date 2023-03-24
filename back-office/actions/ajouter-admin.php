@@ -1,14 +1,14 @@
 <?php
 	session_start();
-	if(session_id()!=$_SESSION["session"]){
-	header('Location : https://manager.vivide.app');
+	if(session_id()!==$_SESSION["session"]){
+	header('Location : https://manager.vivide.leanguyen.fr');
 	}
   require '../../../private/connect.php';
   $pseudo_admin = "SELECT pseudo_admin FROM `admin` WHERE pseudo_admin = :pseudo_admin";
   $stmt = $db -> prepare($pseudo_admin);
   $stmt -> bindParam(':pseudo_admin', $_POST["pseudo_admin"], PDO::PARAM_STR);
   $stmt -> execute();
-  if ($stmt -> rowcount() == 0) {
+  if ($stmt -> rowcount() === 0) {
 	  var_dump($_POST);
 	  if(isset($_POST["professor"])){$is_prof=1;}else{$is_prof=0;};
 	  if(isset($_POST["writer"])){$is_writer=1;}else{$is_writer=0;};

@@ -18,9 +18,9 @@
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
     $stmt->execute();
 
-    if($stmt->rowcount()==0){
+    if($stmt->rowcount()===0){
       header('Location : request.php?c=error');
-	  //}else if($stmt2->rowcount()==1){
+	  //}else if($stmt2->rowcount()===1){
 	}else{
 	  //GET array
 	  $data=$stmt->fetch(PDO::FETCH_ASSOC);
@@ -61,15 +61,15 @@
 		  $mail->isSMTP();                                            //Send using SMTP
 		  $mail->Host       = 'mail.infomaniak.com';                     //Set the SMTP server to send through
 		  $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-		  $mail->Username   = 'support@vivide.app';                     //SMTP username
+		  $mail->Username   = 'support@vivide.leanguyen.fr';                     //SMTP username
 		  $mail->Password   = 'c6E/D!-CZ$q80ia';                               //SMTP password
 		  $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
 		  $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 	  
 		  //Recipients
-		  $mail->setFrom('support@vivide.app', 'VIVIDE.app');
+		  $mail->setFrom('support@vivide.leanguyen.fr', 'vivide.leanguyen.fr');
 		  $mail->addAddress($data["email"], ''); 
-		  $mail->addReplyTo('no-reply@vivide.app', 'no-reply-vivide.app');
+		  $mail->addReplyTo('no-reply@vivide.leanguyen.fr', 'no-reply-vivide.leanguyen.fr');
 	  
 	  
 		  //Content
@@ -88,6 +88,6 @@
 		  
 		  header('Location : request.php?c=success');
 	  }catch (Exception $e) {
-		  echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+		header('Location : request.php?c=error');
 	  }
   }

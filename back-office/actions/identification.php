@@ -13,13 +13,13 @@
     $mdp = $_POST["pswd"];
     $verify = password_verify($mdp,$mdp_hash);
 
-    if($stmt -> rowcount()==1 && $verify){
+    if($stmt -> rowcount()===1 && $verify){
         $_SESSION["sadmin"]=$result["super_admin"];
         $_SESSION["id_admin"]=$result["id_admin"];
         $_SESSION["name_admin"]=$result["name_admin"];
 	  	$_SESSION["session"] = session_id();
         header('location: ../projets.php?order=0&by=id_project');
-        if($result["tmp_pswd"]!=1){
+        if($result["tmp_pswd"]!==1){
             header('location: ../ajouter/modifier-mot-de-passe.php?');
         }
     }else{

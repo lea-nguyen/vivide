@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	if(session_id()!=$_SESSION["session"]){
-	header('Location : https://manager.vivide.app');
+	if(session_id()!==$_SESSION["session"]){
+	header('Location : https://manager.vivide.leanguyen.fr');
 	}
 
     $folder_name = $_POST["name"];
@@ -13,7 +13,7 @@
     $fileExtensionsAllowedContent = ['html'];
     $fileExtensionsAllowedPhotos = ['jpg', 'jpeg', 'png'];
 
-    if (!$_FILES["content"]["size"]==0) {
+    if (!$_FILES["content"]["size"]===0) {
         $fileName = $_FILES["content"]["name"];
         $fileSize = $_FILES["content"]["size"];
         $fileTmpName = $_FILES["content"]["tmp_name"];
@@ -37,7 +37,7 @@
             $didUpload = move_uploaded_file($fileTmpName, $uploadPath);
 
             if ($didUpload) {
-                if (! $_FILES["photos"]["size"][0]==0) {
+                if (! $_FILES["photos"]["size"][0]===0) {
                     $didUpload;
                     foreach($_FILES["photos"]["tmp_name"] as $key => $value) {
                         $fileName = $_FILES["photos"]["name"][$key];
@@ -69,7 +69,7 @@
                         header('Location: ../ajouter/ajouter-article.php?comment=erreur avec les images');
                     }
                 }
-                if (! $_FILES["thumbnail"]["size"]==0) {
+                if (! $_FILES["thumbnail"]["size"]===0) {
                 
                     $fileExtensionsAllowedPhoto = ['jpeg','jpg','png'];
                     $fileName = $_FILES["thumbnail"]["name"];
@@ -101,7 +101,7 @@
                         }else{
                             require '../../../private/connect.php';
                             $articleDirectory='/home/clients/b63949c09209f576c307b6ad65feaf36/web/uploads/articles/'.$folder_name.'/'. $_FILES["content"]["name"];
-                            $articleThumb ='https://vivide.app/uploads/articles/'.$folder_name.'/'.$fileName;
+                            $articleThumb ='https://vivide.leanguyen.fr/uploads/articles/'.$folder_name.'/'.$fileName;
                             
 						  $request="INSERT INTO `articles` (`name_article`, `article_url`, `description_article`, `ext_admin`, `tag`, `link`, `date_article`,`thumbnail_article`) VALUES (:name_art , :slug_art, :desc_art, :admin_art, :tag_art, :link, :date_art, :thumbnail);";
                             $stmt = $db->prepare($request);

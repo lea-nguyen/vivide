@@ -29,18 +29,17 @@ class SignIn extends SignUp {
     const pswd1 = document.querySelector('#password')
     const pswd2 = document.querySelector('#password2verify')
     // pswd match
-    if( pswd1.value.length == pswd2.value.length &&
-        pswd1.value.includes(pswd2.value) &&
-        pswd2.value != "" &&
+    if( pswd1.value === pswd2.value &&
+        pswd2.value !== "" &&
         pswd2.value.length > 5 &&
         pswd2.value.length < 17
     ){
       // verify email
-        axios
-        .get("https://api.vivide.app/getUsers.php")
+      /*   axios
+        .get("https://apivivide.leanguyen.fr/getUsers.php")
         .then((response) => {
             response.data.forEach((user) => {
-            if (user.email == this.state.email) {
+            if (user.email === this.state.email) {
                 alert("Un utilisateur est déjà inscrit avec cet email.");
                 same = true;
             }
@@ -48,13 +47,14 @@ class SignIn extends SignUp {
             });
         })
         .then(() => {
-            if (same != true) {
+            if (same !== true) {
             sessionStorage.setItem("pwd", pswd1.value);
             sessionStorage.setItem("email", document.querySelector('#email').value);
-            window.location.href = "https://vivide.app/identification/inscription/next";
+            window.location.href = "https://vivide.leanguyen.fr/identification/inscription/next";
             }
             return;
-        });
+        }); */
+				window.location.href = "https://vivide.leanguyen.fr/identification/inscription/next";
     }else{
         alert("Vos mots de passe ne correspondent pas.")
     }
@@ -100,11 +100,10 @@ class SignIn extends SignUp {
     });
     // check if there's content 
     if (
-      this.state.email != "" &&
+      this.state.email !== "" &&
       this.state.email.includes('@')
     ) {
-      document.querySelector("button.register").style.backgroundColor =
-        "#AF77FF";
+      document.querySelector("button.register").style.backgroundColor = "#AF77FF";
       document.querySelector("button.register").style.color = "#363636";
       document.querySelector("button.register").disabled = false;
     } else {
@@ -119,7 +118,7 @@ class SignIn extends SignUp {
       <div className="register">
       <Helmet>
           <title>Inscription : Etape n°1</title>
-          <link rel="canonical" href="https://vivide.app/identification/inscription" />
+          <link rel="canonical" href="https://vivide.leanguyen.fr/identification/inscription" />
       </Helmet>
         <h1>Inscrivez-vous&nbsp;!</h1>
         <form>
@@ -128,9 +127,9 @@ class SignIn extends SignUp {
               Email <span>*</span>
             </label>
             <input
-              class="reg_input"
+              className="reg_input"
               type="email"
-              onChange={this.handleEmail}
+              onKeyUp={this.handleEmail}
               placeholder="ameliesmith@gmail.com"
               required
               id="email"
@@ -142,9 +141,9 @@ class SignIn extends SignUp {
               Mot&nbsp;de&nbsp;passe<span>*</span>
             </label>
             <input
-              class="reg_input"
+              className="reg_input"
               type="password"
-              onChange={this.handlePwd}
+              onKeyUp={this.handlePwd}
               placeholder="**********"
               required
               id="password"
@@ -156,9 +155,9 @@ class SignIn extends SignUp {
               Confirmez&nbsp;le mot&nbsp;de&nbsp;passe<span>*</span>
             </label>
             <input
-              class="reg_input"
+              className="reg_input"
               type="password"
-              onChange={this.handlePwd2}
+              onKeyUp={this.handlePwd2}
               placeholder="**********"
               required
               id="password2verify"

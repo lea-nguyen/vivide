@@ -9,7 +9,7 @@ const NewArticles = () => {
     const [data, setData] = useState([]);
     useEffect(()=>{
         // get all the articles
-        axios.get("https://api.vivide.app/getArticles.php")
+        axios.get("https://apivivide.leanguyen.fr/getArticles.php")
             .then((res)=>{
                 let last = res.data.length-1;
                 let list = [res.data[last], res.data[last-1]]

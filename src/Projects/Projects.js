@@ -13,7 +13,7 @@ class Projects extends React.Component {
     }
     componentDidMount(){
         // get all projects
-        axios.get(`https://api.vivide.app/playlists.php?`)
+        axios.get(`https://apivivide.leanguyen.fr/playlists.php?`)
             .then((response) => this.setState({ data: response.data,projects : response.data})
         );
         // initiate the filter on first button
@@ -29,7 +29,7 @@ class Projects extends React.Component {
         event.target.classList.add("is_filter");
         // filter project
         if (event.target.getAttribute('id')!=0){
-            this.setState({projects : this.state.data.filter(project => project.tag == event.target.getAttribute('id'))})
+            this.setState({projects : this.state.data.filter(project => project.tag === event.target.getAttribute('id'))})
         }else{
             this.setState({projects: this.state.data})
         }

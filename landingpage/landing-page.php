@@ -32,18 +32,18 @@
         <!-- barre de navigation -->
         <nav>
             <div class="logo">
-                <a href="https://vivide.app/" target="_blank">
+                <a href="https://vivide.leanguyen.fr/" target="_blank">
                     <img src="assets/images/logo1.svg" alt="">
                     <img src="assets/images/logo3.svg" alt="">
                 </a>
             </div>
             <div class="connexion">
                 <span class="btn se_connecter">
-                    <a href="https://vivide.app/identification/connexion" target="_blank">Se connecter
+                    <a href="https://vivide.leanguyen.fr/identification/connexion" target="_blank">Se connecter
                     </a>
                 </span>
                 <span class="btn inscrire">
-                    <a href="https://vivide.app/identification/inscription" target="_blank">S'inscrire</a>
+                    <a href="https://vivide.leanguyen.fr/identification/inscription" target="_blank">S'inscrire</a>
                 </span>
             </div>
         </nav>
@@ -54,7 +54,7 @@
                 <h1>Apprendre avec Vivide, c’est facile&nbsp;!</h1>
                 <p>Rejoins-nous pour apprendre rapidement, et en toute simplicité&nbsp;!</p>
                 <span class="btn site">
-                    <a href="https://vivide.app/" target="_blank">Rejoindre l’aventure
+                    <a href="https://vivide.leanguyen.fr/" target="_blank">Rejoindre l’aventure
                     </a>
                 </span>
             </div>
@@ -149,7 +149,7 @@
                     téléchargeable. <br> Les cours seront en accès libre, et vous pourrez commenter les vidéos&nbsp;!</p>
                 <br>
                 <span class="btn inscrire">
-                    <a href="https://vivide.app/identification/inscription" target="_blank">S'inscrire</a>
+                    <a href="https://vivide.leanguyen.fr/identification/inscription" target="_blank">S'inscrire</a>
                 </span>
             </div>
 
@@ -234,7 +234,7 @@
             <br>
             <br>
             <span class="btn inscrire">
-                <a href="https://vivide.app/identification/inscription" target="_blank">S'inscrire sur Vivide.com</a>
+                <a href="https://vivide.leanguyen.fr/identification/inscription" target="_blank">S'inscrire sur Vivide.com</a>
             </span>
         </div>
 
@@ -258,7 +258,7 @@
             <a href="https://twitter.com/VivideApp" target="_blank"> <img src="assets/images/twitter.svg" alt=""></a>
 
             <!-- instagram -->
-            <a href="https://www.instagram.com/vivide.app/" target="_blank"> <img src="assets/images/instagram.svg" alt=""></a>
+            <a href="https://www.instagram.com/vivide.leanguyen.fr/" target="_blank"> <img src="assets/images/instagram.svg" alt=""></a>
 
             <!-- linkdin -->
             <a href="https://www.linkedin.com/company/vivide" target="_blank"> <img src="assets/images/linkdin.svg" alt=""></a>

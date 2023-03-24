@@ -10,8 +10,8 @@ class SocialMedia extends React.Component {
                 <p>Abonnez-vous !</p>
                 <div className="social_link">
                     <div><a href="https://twitter.com/VivideApp" target="_blank" rel='noreferrer'><BsTwitter size="20px" color="white"/></a></div>
-                    <div><a href="https://www.instagram.com/vivide.app/" target="_blank" rel='noreferrer'><AiFillLinkedin size="25px" color="white"/></a></div>
-                    <div><a href="https://www.linkedin.com/company/76204665" target="_blank" rel='noreferrer'><AiFillInstagram size="25px" color="white"/></a></div>
+                    <div><a href="https://www.linkedin.com/company/76204665" target="_blank" rel='noreferrer'><AiFillLinkedin size="25px" color="white"/></a></div>
+                    <div><a href="https://www.instagram.com/vivide.app" target="_blank" rel='noreferrer'><AiFillInstagram size="25px" color="white"/></a></div>
                 </div>
             </div>
         )

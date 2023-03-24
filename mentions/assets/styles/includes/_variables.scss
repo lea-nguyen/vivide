@@ -16,9 +16,9 @@ $lato: 'Lato';
 @mixin center-flex($type: null){
     display: flex;
   
-    @if $type == 'x' {
+    @if $type === 'x' {
       justify-content: center;
-    } @else if $type == 'y' {
+    } @else if $type === 'y' {
       align-items: center;
     } @else {
       align-items: center;

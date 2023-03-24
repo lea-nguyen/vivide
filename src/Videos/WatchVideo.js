@@ -39,7 +39,7 @@ function WatchVideo() {
   };
 
   useEffect(() => {
-    if (document.cookie != "") {
+    if (document.cookie !== "") {
       let data = {
         token: token,
         video: video_url,
@@ -49,14 +49,14 @@ function WatchVideo() {
 
       // validate token before accessing someone's informations aka you only
       axios
-        .post("https://api.vivide.app/validatejwt.php", JSON.stringify(data), {
+        .post("https://apivivide.leanguyen.fr/validatejwt.php", JSON.stringify(data), {
           headers: {
             "Content-Type": "application/json",
           },
         })
         .then((res) => {
-          if (res.data != "") {
-            if (res.data.token != token) {
+          if (res.data !== "") {
+            if (res.data.token !== token) {
               if (cArr.length > 3) {
                 document.cookie =
                   "token=" + res.data.token + cArr[1] + cArr[2] + cArr[3];
@@ -68,7 +68,7 @@ function WatchVideo() {
             // able un/like video
             axios
               .post(
-                "https://api.vivide.app/add_like.php",
+                "https://apivivide.leanguyen.fr/add_like.php",
                 JSON.stringify(data),
                 {
                   headers: {
@@ -77,7 +77,7 @@ function WatchVideo() {
                 }
               )
               .then((response) => {
-                if (response.data == 0) {
+                if (response.data === 0) {
                   setLiked(false);
                 } else {
                   setLiked(true);
@@ -86,7 +86,7 @@ function WatchVideo() {
 
             // push project in history
             axios.post(
-              "https://api.vivide.app/push_history_projects.php",
+              "https://apivivide.leanguyen.fr/push_history_projects.php",
               JSON.stringify(data),
               {
                 headers: {
@@ -96,7 +96,7 @@ function WatchVideo() {
             );
             // push video in history
             axios.post(
-              "https://api.vivide.app/push_history_video.php",
+              "https://apivivide.leanguyen.fr/push_history_video.php",
               JSON.stringify(data),
               {
                 headers: {
@@ -108,14 +108,14 @@ function WatchVideo() {
         });
     }
     // get data of video
-    axios.get(`https://api.vivide.app/video.php?`).then((response) => {
-      let video = response.data.filter((vid) => vid.video_url.includes(video_url) && vid.video_url.length == video_url.length);
+    axios.get(`https://apivivide.leanguyen.fr/video.php?`).then((response) => {
+      let video = response.data.filter((vid) => vid.video_url.includes(video_url) && vid.video_url.length === video_url.length);
       setVideo(video[0]);
       document.querySelector("#exercice").innerHTML=video.exercice;
     });
     // get data of project
     axios
-      .get(`https://api.vivide.app/playlists.php?playlist=${project_url}`)
+      .get(`https://apivivide.leanguyen.fr/playlists.php?playlist=${project_url}`)
       .then((response) => setProject(response.data[0]));
   }, [project_url, video_url]);
 
@@ -125,7 +125,7 @@ function WatchVideo() {
         <title>{dataVideo.name_video}</title>
         <link
           rel="canonical"
-          href={`https://vivide.app/parcours/${project_url}/v/${video_url}`}
+          href={`https://vivide.leanguyen.fr/parcours/${project_url}/v/${video_url}`}
         />
         <meta name="og:title" content={dataVideo.name_video} />
         <meta name="og:description" content={dataVideo.description_vid} />

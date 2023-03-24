@@ -35,16 +35,16 @@ const SavedProjects = (props) => {
     /*END OF https://www.tabnine.com/academy/javascript/how-to-get-cookies/, the 24/02/2022 at 02:24*/
 
     useEffect(() => {
-        if(document.cookie!=""){
+        if(document.cookie!==""){
             // validate token before accessing someone's informations aka you only
-            axios.post("https://api.vivide.app/validatejwt.php",JSON.stringify(postData), {
+            axios.post("https://apivivide.leanguyen.fr/validatejwt.php",JSON.stringify(postData), {
                 headers: {
                     'Content-Type': 'application/json'
                 }
             })
             .then((res)=>{
-                if(res.data.token!=""){
-                    if(res.data.token!=token){
+                if(res.data.token!==""){
+                    if(res.data.token!==token){
                         if(cArr.length>3){
                             // the user checked the remember button
                             document.cookie = "token="+res.data.token+cArr[1]+cArr[2]+cArr[3]
@@ -54,7 +54,7 @@ const SavedProjects = (props) => {
                         }
                     }
                     // get saved projects of user
-                    axios.post("https://api.vivide.app/my_projects.php",JSON.stringify(postData), {
+                    axios.post("https://apivivide.leanguyen.fr/my_projects.php",JSON.stringify(postData), {
                         headers: {
                             'Content-Type': 'application/json'
                         }
@@ -85,12 +85,12 @@ const SavedProjects = (props) => {
         }
     }, []);
     
-    if(document.cookie && data[0].name_admin!=""){
+    if(document.cookie && data[0].name_admin!==""){
         return (
             <div className={props.class}>
                 <Helmet>
                     <title>Mes parcours sauvegardés</title>
-                    <link rel="canonical" href="https://vivide.app/parcours/mesparcours" />
+                    <link rel="canonical" href="https://vivide.leanguyen.fr/parcours/mesparcours" />
                 </Helmet>
                 <h1>Mes parcours enregistrés</h1>
                 {data.map((project) => (
@@ -103,7 +103,7 @@ const SavedProjects = (props) => {
             <div className={props.class}>
                 <Helmet>
                     <title>Mes parcours sauvegardés</title>
-                    <link rel="canonical" href="https://vivide.app/parcours/mesparcours" />
+                    <link rel="canonical" href="https://vivide.leanguyen.fr/parcours/mesparcours" />
                 </Helmet>
                 <h1>Mes parcours enregistrés</h1>
                 {data.map((project) => (

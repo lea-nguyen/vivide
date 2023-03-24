@@ -1,5 +1,5 @@
 # VIVIDE
-## Visit our project : https://vivide.app
+## Visit our project : https://vivide.leanguyen.fr
 
 Vivide is a school project.
 An online courses platform for multimedia fields, such as audiovisual, web development and web design

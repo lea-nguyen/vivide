@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	if(session_id()!=$_SESSION["session"]){
-	    header('Location : https://manager.vivide.app');
+	if(session_id()!==$_SESSION["session"]){
+	    header('Location : https://manager.vivide.leanguyen.fr');
 	}
 
     $folder_name = $_POST["name"];
@@ -12,7 +12,7 @@
 
     $fileExtensionsAllowedPhotos = ['jpg', 'jpeg', 'png'];
 
-    if (! $_FILES["thumbnail"]["size"]==0) {
+    if (! $_FILES["thumbnail"]["size"]===0) {
 
         $fileName = $_FILES["thumbnail"]["name"];
         $fileSize = $_FILES["thumbnail"]["size"];
@@ -39,7 +39,7 @@
 
             if ($didUpload) {
                 require '../../../private/connect.php';
-                $projDirectory="https://vivide.app/uploads/projects/".$folder_name.'/'.$fileName;
+                $projDirectory="https://vivide.leanguyen.fr/uploads/projects/".$folder_name.'/'.$fileName;
                 
 			  $request="INSERT INTO `projects` (`name_project`, `project_url`, `tag`, `description`, `ext_admin`,`thumbnail_proj`) VALUES (:nom, :slug, :tag, :description_proj, :ext_admin, :thumbnail);";
                 $stmt=$db->prepare($request);

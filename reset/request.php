@@ -18,9 +18,9 @@
 
 <?php
 if(isset($_GET["c"])){
-  	if($_GET["c"]=="error"){
+  	if($_GET["c"]==="error"){
         echo "<p>Il y a eu une erreur. Veuillez recommencer.</p>";
-    }else if($_GET["c"]=="success"){
+    }else if($_GET["c"]==="success"){
         echo "<p>Un mail a été envoyé. Surveillez vos spams.</p>";
     }
 }

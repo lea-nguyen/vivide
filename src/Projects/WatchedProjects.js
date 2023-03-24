@@ -27,7 +27,7 @@ const WatchedProjects = (props) => {
         let postData = {};
         
         /*FROM https://www.w3schools.com/js/js_cookies.asp, the 25/02/2022 at 15:47*/
-        if(document.cookie!=""){
+        if(document.cookie!==""){
             const name = "token=";
             const cDecoded = decodeURIComponent(document.cookie); //to be careful
             const cArr = cDecoded.split('; ');
@@ -44,15 +44,15 @@ const WatchedProjects = (props) => {
             /*END OF https://www.tabnine.com/academy/javascript/how-to-get-cookies/, the 24/02/2022 at 02:24*/
             
             // validate token before accessing someone's informations aka you only
-            axios.post("https://api.vivide.app/validatejwt.php",JSON.stringify(postData), {
+            axios.post("https://apivivide.leanguyen.fr/validatejwt.php",JSON.stringify(postData), {
                     headers: {
                         'Content-Type': 'application/json'
                     }
                 })
                 .then((res)=>{
-                    if(res.data!=""){
+                    if(res.data!==""){
                         
-                        if(res.data.token!=token){
+                        if(res.data.token!==token){
                             if(cArr.length>3){
                                 // the user checked the remember button
                                 document.cookie = "token="+res.data.token+cArr[1]+cArr[2]+cArr[3]
@@ -61,28 +61,28 @@ const WatchedProjects = (props) => {
                                 document.cookie = "token="+res.data.token+cArr[1]+cArr[2]+cArr[3]
                             }
                         }
-                        if(props.number!=undefined){
+                        if(props.number!==undefined){
                             // project from history
-                            axios.post("https://api.vivide.app/history.php",JSON.stringify(postData), {
+                            axios.post("https://apivivide.leanguyen.fr/history.php",JSON.stringify(postData), {
                                 headers: {
                                     'Content-Type': 'application/json'
                                 }
                             })
                             .then((res) => {
-                                if(res.data.length>0 && document.cookie!=""){
+                                if(res.data.length>0 && document.cookie!==""){
                                     setData(res.data)
                                 }
                             })
                             
                         }else{
                             //liked video
-                            axios.post("https://api.vivide.app/like.php",JSON.stringify(postData), {
+                            axios.post("https://apivivide.leanguyen.fr/like.php",JSON.stringify(postData), {
                                 headers: {
                                     'Content-Type': 'application/json'
                                 }
                             })
                             .then((res) => {
-                                if(res.data.length>0 && document.cookie!=""){
+                                if(res.data.length>0 && document.cookie!==""){
                                     setData(res.data)
                                 }
                             });
@@ -93,7 +93,7 @@ const WatchedProjects = (props) => {
         
 
     }, []);
-    if(props.number!=undefined){
+    if(props.number!==undefined){
         return (
             <div className={props.class}>
                 {data.map((project) => (

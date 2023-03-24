@@ -4,9 +4,9 @@ import { BsPlayCircle } from "react-icons/bs";
 import { BiTimeFive } from "react-icons/bi";
 
 function PreviewProject(props) {
-  if (props.data.name_admin != "") {
+  if (props.data.name_admin !== "") {
     // for not on_going_project
-    if (props.data[1] == 0) {
+    if (props.data[1] === 0) {
         // if there's no video to project, make alert
       return (
         <Link className={props.class} to="/">

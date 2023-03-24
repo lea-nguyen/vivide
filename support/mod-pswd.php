@@ -17,7 +17,7 @@ $stmt = $db -> prepare($request);
 $stmt -> execute();
 $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
-if(isset($_GET["k"]) && isset($_GET["u"]) && $stmt->rowcount()==1){
+if(isset($_GET["k"]) && isset($_GET["u"]) && $stmt->rowcount()===1){
 ?>
     <form class="reset.php" action="change-pswd.php" method="POST">
 <?php   echo "<input type='hidden' name='k' value={$_GET["k"]}>";
@@ -38,7 +38,7 @@ if(isset($_GET["k"]) && isset($_GET["u"]) && $stmt->rowcount()==1){
 }else{
   header('Location:request.php?c=error');
 }
-if(isset($_GET["c"]) && $_GET["c"]=="same"){
+if(isset($_GET["c"]) && $_GET["c"]==="same"){
   echo "<p>Vous ne pouvez pas réutiliser votre mot de passe actuel</p>";
 }
 ?>
@@ -49,7 +49,7 @@ if(isset($_GET["c"]) && $_GET["c"]=="same"){
     handlePswd=()=>{
         let pswd1 = document.querySelector("#pswd1").value;
         let pswd2 = document.querySelector("#pswd2").value;
-        if(pswd1==pswd2){
+        if(pswd1===pswd2){
             document.querySelector("#submit").disabled = false;
             document.querySelector("#submit").style.color="#ff0000";
         }

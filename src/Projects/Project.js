@@ -43,28 +43,28 @@ function ProjectDescription() {
       do: false,
     };
     // get all projects
-    axios.get("https://api.vivide.app//playlists.php?").then((response) => {
+    axios.get("https://apivivide.leanguyen.fr//playlists.php?").then((response) => {
       let data = response.data.filter(
-        (project) => project.project_url == project_url
+        (project) => project.project_url === project_url
       );
       setDataProject(data[0]);
     });
     // validate token before accessing someone's information aka you only
     axios
-      .post("https://api.vivide.app/validatejwt.php", JSON.stringify(data), {
+      .post("https://apivivide.leanguyen.fr/validatejwt.php", JSON.stringify(data), {
         headers: {
           "Content-Type": "application/json",
         },
       })
       .then((res) => {
-        if (res.data != "") {
-          if (res.data.token != token) {
+        if (res.data !== "") {
+          if (res.data.token !== token) {
             changeCookie(res.data.token);
           }
           // add project to your history
           axios
             .post(
-              "https://api.vivide.app/push_my_projects.php",
+              "https://apivivide.leanguyen.fr/push_my_projects.php",
               JSON.stringify(data),
               {
                 headers: {
@@ -73,7 +73,7 @@ function ProjectDescription() {
               }
             )
             .then((response) => {
-              if (response.data == 0) {
+              if (response.data === 0) {
                 setSave(false);
               } else {
                 setSave(true);
@@ -89,7 +89,7 @@ function ProjectDescription() {
         <title>{project_url}</title>
         <link
           rel="canonical"
-          href={`https://vivide.app/parcours/${project_url}`}
+          href={`https://vivide.leanguyen.fr/parcours/${project_url}`}
         />
         <meta name="og:description" content={dataProject.description} />
         <meta name="description" content={dataProject.description} />

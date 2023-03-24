@@ -12,8 +12,8 @@
 <body>
 <?php
   session_start();
-  if(session_id()!=$_SESSION["session"]){
-  header('Location : https://manager.vivide.app');
+  if(session_id()!==$_SESSION["session"]){
+  header('Location : https://manager.vivide.leanguyen.fr');
   }
 ?>
     <header>
@@ -48,7 +48,7 @@
 
 
             <?php
-            if ($_SESSION["sadmin"] == 1) {
+            if ($_SESSION["sadmin"] === 1) {
                 echo "
                 <div class='menulien comptesadmin active'>
                 <span class='iconify' data-icon='healthicons:ui-secure' data-width='18' data-height='18'></span>
@@ -81,7 +81,7 @@
                 <?php
                 $th = array("Prénom" => "name_admin", "Pseudo" => "pseudo_admin", "Super admin" => "super_admin", "Rédacteur" => "writer", "Professeur" => "professor");
                 foreach ($th as $key => $value) {
-                    if ($value == $_GET["by"]) {
+                    if ($value === $_GET["by"]) {
                         $order = $_GET["order"] ? 0 : 1;
                         echo "<th><a href='comptes-admin.php?order=$order&by=$value'>" . ucfirst($key) . "</a></th>";
                     } else {
@@ -94,7 +94,7 @@
             <?php
 			require '../../private/connect.php';
             $request = "SELECT * FROM `admin` ORDER BY {$_GET["by"]} DESC";
-            if ($_GET["order"] == 1) {
+            if ($_GET["order"] === 1) {
                 $request = "SELECT * FROM `admin` ORDER BY {$_GET["by"]} ASC";
             }
             $stmt = $db->query($request);
@@ -108,7 +108,7 @@
                     <td><?php echo $admin["professor"] ?></td>
 
             <?php
-            	if ($_SESSION["sadmin"] == 1) {
+            	if ($_SESSION["sadmin"] === 1) {
 			?>
                     <td><a href="ajouter/modifier-admin.php?id=<?php echo $admin["id_admin"] ?>">
                             <span class="iconify" data-icon="ri:delete-bin-6-fill" data-width="20" data-height="20"></span></a></td>

@@ -23,7 +23,7 @@ class Menu extends React.Component {
   componentDidMount() {
     // manage menu
     let url = window.location.href;
-    let domain = "https://vivide.app";
+    let domain = "https://vivide.leanguyen.fr";
     // let domain = "http://localhost:3000";
     domain = domain.length;
     url = url.substring(domain);
@@ -46,7 +46,7 @@ class Menu extends React.Component {
     document.querySelector("body").style.overflowY = "auto";
     // manage the class disactivate of menu
     document.querySelector(".a").classList.remove("isActiveLevel1");
-    if (e.target.classList.contains("disactivate") == false) {
+    if (e.target.classList.contains("disactivate") === false) {
       document.querySelector(".disactivate").classList.remove("isActiveLevel1");
     } else {
       document.querySelector(".disactivate").classList.add("isActiveLevel1");

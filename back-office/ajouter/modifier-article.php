@@ -12,8 +12,8 @@
 <body>
 <?php
   session_start();
-  if(session_id()!=$_SESSION["session"]){
-  header('Location : https://manager.vivide.app');
+  if(session_id()!==$_SESSION["session"]){
+  header('Location : https://manager.vivide.leanguyen.fr');
   }
 ?>
     <header>
@@ -23,7 +23,7 @@
             <a href="articles.php?order=0&by=id_article">Articles</a>
             <a href="comptes.php?order=0&by=id_user">Comptes</a>
 <?php
-    if($_SESSION["sadmin"]==1){
+    if($_SESSION["sadmin"]===1){
         echo "<a href='comptes-admin.php?order=0&by=id_admin'>Les comptes admin</a>";
     }
 ?>

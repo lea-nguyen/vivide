@@ -32,7 +32,7 @@
 		  $stmt2=$db->prepare($request2);
 		  $stmt2->bindParam(':user_id',$user_id,PDO::PARAM_INT);
 		  $stmt2->execute();
-	  	  header('Location: https://vivide.app/identification/connexion');
+	  	  header('Location: https://vivide.leanguyen.fr/identification/connexion');
 	  }
 	}
-	header('Location: https://vivide.app/identification/connexion?c=error');
+	header('Location: https://vivide.leanguyen.fr/identification/connexion?c=error');

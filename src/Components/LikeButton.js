@@ -25,7 +25,7 @@ function LikeButton(props){
     },[props.video_url,props.project_url,props.token,props.liked])
 
     const swithLike=()=>{
-        if(document.cookie!=""){
+        if(document.cookie!==""){
             let data = {
                 token : props.token,
                 video : props.video_url,
@@ -34,25 +34,25 @@ function LikeButton(props){
             }
             
             // validate token befor access someone's data aka yours only
-            axios.post("https://api.vivide.app/validatejwt.php",JSON.stringify(data), {
+            axios.post("https://apivivide.leanguyen.fr/validatejwt.php",JSON.stringify(data), {
                 headers: {
                     'Content-Type': 'application/json'
                 }
             })
             .then((res)=>{
-                if(res.data!=""){
-                    if(res.data.token!=props.token){
+                if(res.data!==""){
+                    if(res.data.token!==props.token){
                         props.changeCookie(res.data.token)
                     }
                 }
                 // be able to un/like
-                axios.post("https://api.vivide.app/add_like.php",JSON.stringify(data), {
+                axios.post("https://apivivide.leanguyen.fr/add_like.php",JSON.stringify(data), {
                     headers: {
                         'Content-Type': 'application/json'
                     }
                 })
                     .then((response)=>{
-                        if(response.data==0){
+                        if(response.data===0){
                             setButtonContent(true)
                         }else{
                             setButtonContent(false)

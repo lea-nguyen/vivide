@@ -25,7 +25,7 @@ function ArticlesList(){
     const [queries, setQueries] = useState([]);
     useEffect(()=>{
         // get all of the articles
-        axios.get("https://api.vivide.app/getArticles.php")
+        axios.get("https://apivivide.leanguyen.fr/getArticles.php")
             .then((res)=>{
                 setData(res.data);
                 setQueries(res.data);
@@ -40,8 +40,8 @@ function ArticlesList(){
         event.target.classList.add("is_filter");
         
         // filter project
-        if (event.target.getAttribute('id')!=0){
-            setQueries(data.filter(article => article.tag == event.target.getAttribute('id')));
+        if (event.target.getAttribute('id')!==0){
+            setQueries(data.filter(article => article.tag === event.target.getAttribute('id')));
         }else{
             setQueries(data)
         }
@@ -50,7 +50,7 @@ function ArticlesList(){
         <div className='articles_list'>
             <Helmet>
                 <title>Articles</title>
-                <link rel="canonical" href="https://vivide.app/articles" />
+                <link rel="canonical" href="https://vivide.leanguyen.fr/articles" />
             </Helmet>
             <BackButton linkBack={"../"} />
             <h1>Articles</h1>

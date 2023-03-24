@@ -1,6 +1,6 @@
 {
-  "name": "project",
-  "homepage": "https://vivide.app",
+  "name": "vivide",
+  "homepage": "https://vivide.leanguyen.fr",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,7 +15,7 @@
     "react-icons": "^4.3.1",
     "react-player": "^2.9.0",
     "react-router-dom": "^5.3.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^4.0.3",
     "rs-jwt": "^0.2.0",
     "web-vitals": "^1.1.2"
   },

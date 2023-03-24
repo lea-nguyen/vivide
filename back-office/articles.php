@@ -12,8 +12,8 @@
 <body>
 <?php
   session_start();
-  if(session_id()!=$_SESSION["session"]){
-  header('Location : https://manager.vivide.app');
+  if(session_id()!==$_SESSION["session"]){
+  header('Location : https://manager.vivide.leanguyen.fr');
   }
 ?>
     <header>
@@ -48,7 +48,7 @@
 
 
             <?php
-            if ($_SESSION["sadmin"] == 1) {
+            if ($_SESSION["sadmin"] === 1) {
                 echo "
                 <div class='menulien comptesadmin'>
                 <span class='iconify' data-icon='healthicons:ui-secure' data-width='18' data-height='18'></span>
@@ -82,7 +82,7 @@
                 <?php
                 $th = array("titre" => "name_article", "auteur/e" => "name_admin", "date" => "date_article", "domaine" => "tag");
                 foreach ($th as $key => $value) {
-                    if ($value == $_GET["by"]) {
+                    if ($value === $_GET["by"]) {
                         $order = $_GET["order"] ? 0 : 1;
                         echo "<th><a href='articles.php?order=$order&by=$value'>" . ucfirst($key) . "</a></th>";
                     } else {
@@ -95,7 +95,7 @@
             <?php
 			require '../../private/connect.php';
             $request = "SELECT * FROM `articles`,`admin` WHERE `articles`.ext_admin=`admin`.id_admin ORDER BY {$_GET["by"]} DESC";
-            if ($_GET["order"] == 1) {
+            if ($_GET["order"] === 1) {
                 $request = "SELECT * FROM `articles`,`admin` WHERE `articles`.ext_admin=`admin`.id_admin ORDER BY {$_GET["by"]} ASC";
             }
             $stmt = $db->query($request);

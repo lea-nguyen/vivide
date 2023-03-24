@@ -12,8 +12,8 @@
 <body>
 <?php
   session_start();
-  if(session_id()!=$_SESSION["session"]){
-  header('Location : https://manager.vivide.app');
+  if(session_id()!==$_SESSION["session"]){
+  header('Location : https://manager.vivide.leanguyen.fr');
   }
 ?>
     <header>
@@ -49,7 +49,7 @@
 
             <?php
 
-            if ($_SESSION["sadmin"] == 1) {
+            if ($_SESSION["sadmin"] === 1) {
                 echo "
                 <div class='menulien comptesadmin'>
                 <span class='iconify' data-icon='healthicons:ui-secure' data-width='18' data-height='18'></span>
@@ -79,9 +79,9 @@
                 <?php
                 $th = array("projets" => "name_project", "titre" => "name_video", "auteur" => "name_admin", "durée" => "duration", "date" => "date_video");
                 foreach ($th as $key => $value) {
-                    if ($key == "durée" || $key == "auteur") {
+                    if ($key === "durée" || $key === "auteur") {
                         echo "<th>" . ucfirst($key) . "</th>";
-                    } else if ($value == $_GET["by"]) {
+                    } else if ($value === $_GET["by"]) {
                         $order = $_GET["order"] ? 0 : 1;
                         echo "<th><a href='videos.php?order=$order&by=$value'>" . ucfirst($key) . "</a></th>";
                     } else {
@@ -94,7 +94,7 @@
             <?php
 			require '../../private/connect.php';
             $request = "SELECT * FROM `videos`,`projects`,`admin` WHERE `videos`.ext_project=`projects`.id_project AND `projects`.ext_admin=`admin`.id_admin ORDER BY {$_GET["by"]} DESC";
-            if ($_GET["order"] == 1) {
+            if ($_GET["order"] === 1) {
                 $request = "SELECT * FROM `videos`,`projects`,`admin` WHERE `videos`.ext_project=`projects`.id_project AND `projects`.ext_admin=`admin`.id_admin ORDER BY {$_GET["by"]} ASC";
             }
             $stmt = $db->query($request);
